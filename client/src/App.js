@@ -1,15 +1,12 @@
 import { Routes, Route } from 'react-router-dom';
+import Home from './components/shared/Home';
 
 
 const App = () => (
   <>
-    <FetchUser>
-      <>
-        <Routes>
-          
-        </Routes>
-      </>
-    </FetchUser>
+    <Routes>
+      <Route path='/' element={<Home />} />
+    </Routes>
   </>
 )
 
