@@ -38,6 +38,6 @@ class Api::OrdersController < ApplicationController
     end
 
   def orders_params
-    params.require(:order).permit(:order_cost, :order_quantity, :est_shipping, :address, :processed, :order_number)
+    params.require(:order).permit(:order_cost, :order_quantity, :est_shipping, :address, :processed, :order_number, :user_id)
   end
 end
