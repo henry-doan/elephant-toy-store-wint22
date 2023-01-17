@@ -6,5 +6,7 @@ Rails.application.routes.draw do
   # root "articles#index"
   namespace :api do
     resource :items
+    resource :reviews
+    resource :orders
   end
 end
