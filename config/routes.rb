@@ -6,4 +6,5 @@ Rails.application.routes.draw do
   # root "articles#index"
   namespace :api do
     resource :items
+  end
 end
