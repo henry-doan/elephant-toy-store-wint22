@@ -9,8 +9,8 @@ const MainNavbar = ({ user, handleLogout}) => {
       if (user) {
         return (
           <>
-            <Link to='/'>
-              <li>FIRST MODEL</li>
+            <Link to='/cart'>
+              <Button>Cart</Button>
             </Link>
             <Button onClick={() => handleLogout() }>
               Logout
@@ -39,6 +39,12 @@ const MainNavbar = ({ user, handleLogout}) => {
         <ul>
           <Link to='/'>
             <li>Home</li>
+          </Link>
+          <Link to='/items'>
+            <Button>Toys</Button>
+          </Link>
+          <Link to='/categorys'>
+            <Button>Toy Categories</Button>
           </Link>
           { rightNavItems() }
         </ul>
