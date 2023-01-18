@@ -1,17 +1,24 @@
-
 import { Routes, Route } from 'react-router-dom';
-import Categorys from './components/category/Categorys';
 import Home from './components/shared/Home';
-import Footer from './components/shared/Footer';
-
+import Login from './components/auth/Login';
+import Register from './components/auth/Register';
+import Nomatch from './components/shared/Nomatch';
+import MainNavbar from './components/shared/MainNavbar';
+import FetchUser from './components/auth/FetchUser';
 
 const App = () => (
   <>
-    <Routes>
-      <Route path='/' element={<Home />} />
-      <Route path='/category' element={<Categorys />} />
-    </Routes>
-     <Footer/>
+    <MainNavbar />
+    <FetchUser>
+      <>
+        <Routes>
+          <Route path='/' element={<Home />} />
+          <Route path='/login' element={<Login />} />
+          <Route path='/register' element={<Register />} />
+          <Route path='/*' element={<Nomatch />} />
+        </Routes>
+      </>
+    </FetchUser>
   </>
 )
 

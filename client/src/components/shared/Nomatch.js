@@ -2,8 +2,7 @@ import { Link } from 'react-router-dom';
 
 const Nomatch = () => (
   <>
-    <h1>404 error, page not found</h1>
-    {/* Link are a tags to nav inside the app */}
+    <h1>404 - Page not Found</h1>
     <Link to='/'>
       Return Home
     </Link>
