@@ -3,11 +3,11 @@ class Api::OrdersController < ApplicationController
 
 
   def index
-  render json: current_user.orders
+    render json: current_user.orders
   end
 
   def show
-  render json: @order
+    render json: @order
   end
 
   def create

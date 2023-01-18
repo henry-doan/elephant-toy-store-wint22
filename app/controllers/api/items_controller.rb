@@ -1,10 +1,12 @@
 class Api::ItemsController < ApplicationController
   before_action :set_item, only: [:show, :update, :destroy]
+
   def index
     render json: Item.all
   end
-
+  
   def show
+    binding.pry
     render json: @item
   end
 

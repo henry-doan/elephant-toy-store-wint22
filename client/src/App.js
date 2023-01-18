@@ -20,11 +20,14 @@ const App = () => (
           <Route path='/' element={<Home />} />
           <Route path='/login' element={<Login />} />
           <Route path='/register' element={<Register />} />
+          <Route path='/items' element={<Items />} />
+          <Route path='/categorys' element={<Categorys />} />
+
           <Route path='/' element={<ProtectedRoute />}>
-            <Route path='/items' element={<Items />} />
-            <Route path='/categorys' element={<Categorys />} />
             <Route path='/cart' element={<Orders />} />
           </Route>
+
+
           <Route path='/*' element={<Nomatch />} />
         </Routes>
       </>
