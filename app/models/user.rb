@@ -7,4 +7,9 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   include DeviseTokenAuth::Concerns::User
+
+  has_many :orders, dependent: :destroy
+  has_many :items, through: :reviews
+  has_many :reviews, dependent: :destroy
+
 end
