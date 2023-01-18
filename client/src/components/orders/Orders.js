@@ -17,9 +17,6 @@ const Orders = ({ orders, getAllOrders, msgs, setMsgs  }) => {
       <Button variant="primary" onClick={() => setAdd(true)}>
         +
       </Button>
-      <Link to='/random'>
-        <Button>Random Order</Button>
-      </Link>
       <Modal show={adding} onHide={() => setAdd(false)}>
         <Modal.Header closeButton>
           <Modal.Title>Create Order</Modal.Title>
