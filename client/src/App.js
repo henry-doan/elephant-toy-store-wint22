@@ -5,6 +5,11 @@ import Register from './components/auth/Register';
 import Nomatch from './components/shared/Nomatch';
 import MainNavbar from './components/shared/MainNavbar';
 import FetchUser from './components/auth/FetchUser';
+import Items from './components/items/Items';
+import Categorys from './components/category/Categorys';
+import ProtectedRoute from './components/auth/ProtectedRoute';
+import Orders from './components/orders/Orders';
+
 
 const App = () => (
   <>
@@ -15,6 +20,11 @@ const App = () => (
           <Route path='/' element={<Home />} />
           <Route path='/login' element={<Login />} />
           <Route path='/register' element={<Register />} />
+          <Route path='/' element={<ProtectedRoute />}>
+            <Route path='/items' element={<Items />} />
+            <Route path='/categorys' element={<Categorys />} />
+            <Route path='/cart' element={<Orders />} />
+          </Route>
           <Route path='/*' element={<Nomatch />} />
         </Routes>
       </>
