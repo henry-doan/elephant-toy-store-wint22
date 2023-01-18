@@ -31,6 +31,7 @@ const App = () => (
 
 
           <Route path='/*' element={<Nomatch />} />
+          <Route path='/items' element={<Items/>} />
         </Routes>
       </>
     </FetchUser>
