@@ -1,6 +1,5 @@
-import { Card, Button, Modal, Container, Row, Col, Image } from 'react-bootstrap';
+import { Card, Button, Modal, Container, Row, Col } from 'react-bootstrap';
 import { useState } from 'react';
-import Moment from 'react-moment';
 import { Link } from 'react-router-dom';
 import { ItemConsumer } from '../../providers/ItemsProvider';
 

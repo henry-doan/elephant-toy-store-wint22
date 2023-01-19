@@ -55,7 +55,7 @@ const OrderForm = ({ setAdd, addOrder, updateOrder }) => {
             name='order_cost'
             value={order.order_cost}
             onChange={(e) => setOrder({ ...order, order_cost: e.target.value})}
-            type='integer'
+            type='float'
             required
           />
         </Form.Group>
@@ -69,7 +69,7 @@ const OrderForm = ({ setAdd, addOrder, updateOrder }) => {
             required
           />
         </Form.Group>
-        <Form.Group className="mb-3">
+        {/* <Form.Group className="mb-3">
           <Form.Label>shipping</Form.Label>
           <Form.Control 
             name='est_shipping'
@@ -78,14 +78,14 @@ const OrderForm = ({ setAdd, addOrder, updateOrder }) => {
             type='date'
             required
           />
-        </Form.Group>
+        </Form.Group> */}
         <Form.Group className="mb-3" controlId="formBasicCheckbox">
           <Form.Label>Processed</Form.Label>
           <Form.Check 
             type="checkbox"
             name='complete'
             value={order.processed}
-            onChange={(e) => setOrder({...order, processed: e.value.checked })}
+            onChange={(e) => setOrder({...order, processed: e.target.checked })}
           />
         </Form.Group>
 
