@@ -9,6 +9,7 @@ import Items from './components/items/Items';
 import Categorys from './components/category/Categorys';
 import ProtectedRoute from './components/auth/ProtectedRoute';
 import Orders from './components/orders/Orders';
+import ItemForm from './components/items/ItemForm';
 
 
 const App = () => (
@@ -25,6 +26,7 @@ const App = () => (
 
           <Route path='/' element={<ProtectedRoute />}>
             <Route path='/cart' element={<Orders />} />
+            <Route path='/:id/updateItem' element={<ItemForm />} />
           </Route>
 
 

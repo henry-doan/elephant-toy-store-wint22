@@ -48,7 +48,7 @@ const ItemShow = ({ id, item_name, description, quantity, category, discount, br
                 <Link
                   to={`/${id}/review`}
                 >
-                  <Button>Notes</Button>
+                  <Button>Reviews</Button>
                 </Link>
               </Container>
             </Col>
