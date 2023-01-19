@@ -3,7 +3,6 @@ import ItemList from './ItemList';
 import { useState, useEffect } from "react";
 import { Container, Modal, Button } from 'react-bootstrap';
 import ItemForm from './ItemForm';
-import { Link } from 'react-router-dom';
 
 const Items = ({ items, getAllItems, msgs, setMsgs  }) => {
   const [adding, setAdd] = useState(false)
@@ -28,7 +27,7 @@ const Items = ({ items, getAllItems, msgs, setMsgs  }) => {
           />
         </Modal.Body>
       </Modal>
-      <h1>My Items</h1>
+      <h1>Toys</h1>
       <ItemList 
         items={items}
       />

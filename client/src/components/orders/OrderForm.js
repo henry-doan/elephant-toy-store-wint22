@@ -39,6 +39,56 @@ const OrderForm = ({ setAdd, addOrder, updateOrder }) => {
             required
           />
         </Form.Group>
+        <Form.Group className="mb-3">
+          <Form.Label>Order quantity</Form.Label>
+          <Form.Control 
+            name='order_quantity'
+            value={order.order_quantity}
+            onChange={(e) => setOrder({ ...order, order_quantity: e.target.value})}
+            type='integer'
+            required
+          />
+        </Form.Group>
+        <Form.Group className="mb-3">
+          <Form.Label>Order Cost</Form.Label>
+          <Form.Control 
+            name='order_cost'
+            value={order.order_cost}
+            onChange={(e) => setOrder({ ...order, order_cost: e.target.value})}
+            type='integer'
+            required
+          />
+        </Form.Group>
+        <Form.Group className="mb-3">
+          <Form.Label>Order number</Form.Label>
+          <Form.Control 
+            name='order_number'
+            value={order.order_number}
+            onChange={(e) => setOrder({ ...order, order_number: e.target.value})}
+            type='integer'
+            required
+          />
+        </Form.Group>
+        <Form.Group className="mb-3">
+          <Form.Label>shipping</Form.Label>
+          <Form.Control 
+            name='est_shipping'
+            value={order.est_shipping}
+            onChange={(e) => setOrder({ ...order, est_shipping: e.target.value})}
+            type='date'
+            required
+          />
+        </Form.Group>
+        <Form.Group className="mb-3" controlId="formBasicCheckbox">
+          <Form.Label>Processed</Form.Label>
+          <Form.Check 
+            type="checkbox"
+            name='complete'
+            value={order.processed}
+            onChange={(e) => setOrder({...order, processed: e.value.checked })}
+          />
+        </Form.Group>
+
         
         <Button variant="primary" type="submit">
           Submit

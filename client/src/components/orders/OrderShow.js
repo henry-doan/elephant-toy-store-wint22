@@ -19,8 +19,10 @@ const OrderShow = ({ id, order_quantity, order_cost, order_number, est_shipping,
             <Col>
               <Container>
                 <h1>{order_number}</h1>
-                <p>order_quantity: {order_quantity}
-                </p>
+                <h2>{order_cost}</h2>
+                <h2>{address}</h2>
+                <h2>{processed}</h2>
+                <p>order_quantity: {order_quantity}</p>
                 <p>est_shipping: { est_shipping ? <Moment format='MM-DD-YY'>{est_shipping}</Moment> : "Not Shipped yet" }</p>
                 <Link
                   to={`/${id}/updateOrder`}
