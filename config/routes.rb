@@ -7,7 +7,7 @@ Rails.application.routes.draw do
     resources :orders
     resources :wishlists
   end
-  resources : wishlists: [:index, :show, :create, :update, :destroy] do
-      resources :wishlist_items
-    end
+  # resources : wishlists: [:index, :show, :create, :update, :destroy] do
+  #     resources :wishlist_items
+  #   end
 end
