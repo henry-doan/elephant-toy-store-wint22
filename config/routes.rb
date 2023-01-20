@@ -4,10 +4,11 @@ Rails.application.routes.draw do
   namespace :api do
     resources :items
     resources :reviews
-    resources :orders
+    resources :orders 
     resources :wishlists
   end
-  # resources : wishlists: [:index, :show, :create, :update, :destroy] do
-  #     resources :wishlist_items
-  #   end
+  resources :wishlists, except: [:index, :show, :create, :update, :destroy] do
+      resources :wishlistitems
+    end
+
 end

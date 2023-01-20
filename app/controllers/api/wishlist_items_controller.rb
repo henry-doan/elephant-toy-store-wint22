@@ -1,6 +1,6 @@
 class Api::WishlistItemsController < ApplicationController
-  before_action :set_wishlist
-  before_action :set_wishlist_item, only: [:show, :update, :destroy]
+  before_action :set_wishlists
+  before_action :set_wishlist_items, only: [:show, :update, :destroy]
   def index
     render json: @wishlist.wishlist_items
   end
@@ -36,11 +36,11 @@ class Api::WishlistItemsController < ApplicationController
       params.require(:wishlist_item).permit(:wishlist_item_name, :desc, :plays_wishlist_item)
     end
     
-    def set_wishlist 
+    def set_wishlists
       @wishlist = Wishlist.find(params[:wishlist_id])
     end
   
-    def set_wishlist_item
+    def set_wishlist_items
       @wishlist_item= @wishlist.wishlist_items.find(params[:id])
     end
 end

@@ -3,3 +3,4 @@ class WishlistItem < ApplicationRecord
   validates :item_id, presence: true
   validates :item_id, numericality: { only_integer: true }
 end
+
