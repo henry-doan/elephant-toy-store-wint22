@@ -18,4 +18,13 @@ Rails.application.routes.draw do
     get "/featured", to: "items#featured"
     resources :newsletters
   end
+
+  resources :orders, except: [:index, :show, :create, :update, :destroy] do
+    resources :order_items
+  end
+
+  resources :wishlists, except: [:index, :show, :create, :update, :destroy] do
+    resources :wishlist_items
+  end
+
 end
