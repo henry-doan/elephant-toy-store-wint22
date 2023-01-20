@@ -38,7 +38,7 @@ const OrderProvider = ({ children }) => {
           return c
         })
         setOrders(newUpdatedOrders)
-        navigate('/orders')
+        navigate('/cart')
       })
       .catch( err => {
         console.log(err)
