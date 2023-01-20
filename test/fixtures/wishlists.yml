@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  wish_total: 1.5
+  wish_item_quantity: 1
+  wishlist_name: MyString
+  user: one
+
+two:
+  wish_total: 1.5
+  wish_item_quantity: 1
+  wishlist_name: MyString
+  user: two

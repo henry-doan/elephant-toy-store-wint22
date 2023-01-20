@@ -12,6 +12,9 @@ const MainNavbar = ({ user, handleLogout}) => {
             <Link to='/cart'>
               <Button>Cart</Button>
             </Link>
+            <Link to='/wishlists'>
+              <Button>Wishlists</Button>
+            </Link>
             <Button onClick={() => handleLogout() }>
               Logout
             </Button>

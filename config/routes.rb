@@ -5,5 +5,6 @@ Rails.application.routes.draw do
     resources :items
     resources :reviews
     resources :orders
+    resources :wishlists
   end
 end
