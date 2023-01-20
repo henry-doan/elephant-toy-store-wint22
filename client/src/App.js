@@ -11,6 +11,8 @@ import ProtectedRoute from './components/auth/ProtectedRoute';
 import Orders from './components/orders/Orders';
 import ItemForm from './components/items/ItemForm';
 import OrderForm from './components/orders/OrderForm';
+import Wishlists from './components/wishlists/Wishlists';
+import WishlistForm from './components/wishlists/WishlistForm';
 
 
 const App = () => (
@@ -29,6 +31,8 @@ const App = () => (
             <Route path='/cart' element={<Orders />} />
             <Route path='/:id/updateItem' element={<ItemForm />} />
             <Route path='/:id/updateOrder' element={<OrderForm />} />
+            <Route path='/wishlists' element={<Wishlists />} />
+            <Route path='/:id/updateWishlist' element={<WishlistForm />} />
           </Route>
 
 

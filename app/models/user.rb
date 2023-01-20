@@ -11,5 +11,6 @@ class User < ActiveRecord::Base
   has_many :orders, dependent: :destroy
   has_many :items, through: :reviews
   has_many :reviews, dependent: :destroy
+  has_many :wishlists, dependent: :destroy
 
 end
