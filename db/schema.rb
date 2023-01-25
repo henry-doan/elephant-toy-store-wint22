@@ -89,6 +89,14 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_25_220057) do
     t.index ["uid", "provider"], name: "index_users_on_uid_and_provider", unique: true
   end
 
+  create_table "wishlist_items", force: :cascade do |t|
+    t.integer "item_id"
+    t.bigint "wishlist_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["wishlist_id"], name: "index_wishlist_items_on_wishlist_id"
+  end
+
   create_table "wishlists", force: :cascade do |t|
     t.float "wish_total"
     t.integer "wish_item_quantity"
@@ -102,5 +110,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_25_220057) do
   add_foreign_key "orders", "users"
   add_foreign_key "reviews", "items"
   add_foreign_key "reviews", "users"
+  add_foreign_key "wishlist_items", "wishlists"
   add_foreign_key "wishlists", "users"
 end

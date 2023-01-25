@@ -13,6 +13,7 @@ import ReviewProvider from './providers/ReviewProvider';
 import WishlistProvider from './providers/WishlistProvider';
 import NewsletterProvider from './providers/NewsletterProvider';
 
+
 initMiddleware();
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
