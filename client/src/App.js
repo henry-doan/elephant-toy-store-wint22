@@ -30,7 +30,12 @@ const App = () => (
           <Route path='/register' element={<Register />} />
           <Route path='/items' element={<Items />} />
           <Route path='/categorys' element={<Categorys />} />
+<<<<<<< HEAD
           <Route path='/items/:id' element={<ItemShow/>} />
+=======
+          {/* <Route path='/:id/review' element={<Reviews />} /> */}
+
+>>>>>>> 98466f3 (item linked to cart)
           <Route path='/' element={<ProtectedRoute />}>
             <Route path='/cart' element={<Orders />} />
             <Route path='/:id/updateItem' element={<ItemForm />} />

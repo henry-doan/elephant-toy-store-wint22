@@ -69,16 +69,6 @@ const OrderForm = ({ setAdd, addOrder, updateOrder }) => {
             required
           />
         </Form.Group>
-        {/* <Form.Group className="mb-3">
-          <Form.Label>shipping</Form.Label>
-          <Form.Control 
-            name='est_shipping'
-            value={order.est_shipping}
-            onChange={(e) => setOrder({ ...order, est_shipping: e.target.value})}
-            type='date'
-            required
-          />
-        </Form.Group> */}
         <Form.Group className="mb-3" controlId="formBasicCheckbox">
           <Form.Label>Processed</Form.Label>
           <Form.Check 
