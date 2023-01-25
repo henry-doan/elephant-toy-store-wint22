@@ -1,59 +1,48 @@
-import { Card, Button, Modal, Container, Row, Col } from 'react-bootstrap';
+import { Button, Container, Row, Col } from 'react-bootstrap';
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useParams, useLocation } from 'react-router-dom';
 import { ItemConsumer } from '../../providers/ItemsProvider';
 
-const ItemShow = ({ id, item_name, description, quantity, category, discount, brand, deleteItem }) => {
+const ItemShow = ({ deleteItem }) => {
   const [showing, setShow] = useState(false)
+  const { id } = useParams()
+  const location = useLocation()
+  const { item_name, description, quantity, category, discount, brand } = location.state
 
   return(
     <>
-      <Card style={{ width: '10rem' }}>
-        <Card.Body>
-          <Card.Title>{item_name}</Card.Title>
-          <Button variant="outline-dark" onClick={() => setShow(true)}>
-            Show
-          </Button>
-        </Card.Body>
-      </Card>
-
-      <Modal show={showing} onHide={() => setShow(false)}>
-        <Modal.Header closeButton>
-        </Modal.Header>
-        <Modal.Body>
-          <Row>
-            <Col>
-              <Container>
-                <h1>{item_name}</h1>
-                <Link
-                  to={`/${id}/updateItem`}
-                  state={{
-                    id,
-                    item_name,
-                    description,
-                    quantity,
-                    category,
-                    discount,
-                    brand
-                  }}
-                >
-                  <Button>Edit</Button>
-                </Link>
-                <Button
-                  onClick={() => deleteItem(id)}
-                >
-                  Delete
-                </Button>
-                <Link
-                  to={`/${id}/review`}
-                >
-                  <Button>Reviews</Button>
-                </Link>
-              </Container>
-            </Col>
-          </Row>
-        </Modal.Body>
-      </Modal>
+      <Row>
+        <Col>
+          <Container>
+            {/* add item image */}
+            <h1>{item_name}</h1>
+            <Link
+              to={`/${id}/updateItem`}
+              state={{
+                id,
+                item_name,
+                description,
+                quantity,
+                category,
+                discount,
+                brand
+              }}
+            >
+              <Button>Edit</Button>
+            </Link>
+            <Button
+              onClick={() => deleteItem(id)}
+            >
+              Delete
+            </Button>
+            <Link
+              to={`/${id}/review`}
+            >
+              <Button>Reviews</Button>
+            </Link>
+          </Container>
+        </Col>
+      </Row>
       <br />
     </>
   )

@@ -1,14 +1,19 @@
-import { Container, Row, Col } from 'react-bootstrap';
-import ItemShow from './ItemsShow';
+import { Container, Row, Col, Card } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 const ItemList = ({ items }) => (
   <Container>
     <Row md='4'>
       { items.map( c => 
         <Col key={c.id}>
-          <ItemShow 
-            {...c}
-          />
+          <Link to={`/items/${c.id}`} state={{ ...c}}>
+            <Card style={{ width: '10rem' }}>
+              <Card.Body>
+                {/* Add item image */}
+                <Card.Title>{c.item_name}</Card.Title>
+              </Card.Body>
+            </Card>
+          </Link>
         </Col>
       )}
     </Row>

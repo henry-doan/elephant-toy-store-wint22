@@ -33,7 +33,7 @@ class Api::WishlistItemsController < ApplicationController
 
   private 
     def wishlist_item_params
-      params.require(:wishlist_item).permit(:wishlist_item_name, :desc, :plays_wishlist_item)
+      params.require(:wishlist_item).permit(:item_id)
     end
     
     def set_wishlists

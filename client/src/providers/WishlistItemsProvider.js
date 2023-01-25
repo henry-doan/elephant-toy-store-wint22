@@ -13,7 +13,7 @@ const WishlistItemProvider = ({children}) => {
   const navigate = useNavigate()
 
 
-  const getAllWishlistItems = () => {
+  const getAllWishlistItems = (wishlistId) => {
     axios.get(`/api/wishlist/${wishlistId}/wishlistitems`)
       .then( res => setWishlistItems(res.data))
       .catch( err => {
@@ -22,7 +22,7 @@ const WishlistItemProvider = ({children}) => {
       })
   }
 
-  const addWishlistItem = (wishlistitem) => {
+  const addWishlistItem = (wishlistId, wishlistitem) => {
     axios.post(`/api/wishlist/${wishlistId}/wishlistitems`, { wishlistitem })
       .then( res => setWishlistItems([...wishlistitems, res.data]))
       .catch( err => {
@@ -31,7 +31,7 @@ const WishlistItemProvider = ({children}) => {
       })
   }
 
-   const updateWishlistItem = (id, wishlistitem) => {
+   const updateWishlistItem = (wishlistId, id, wishlistitem) => {
     axios.put(`/api/wishlist/${wishlistId}/wishlistitems/${id}`, { wishlistitem })
       .then( res => {
         const newUpdatedWishListItems = wishlistitems.map( c => {
@@ -48,7 +48,7 @@ const WishlistItemProvider = ({children}) => {
         })
     }
 
-  const deleteWishlistItem = (id) => {
+  const deleteWishlistItem = (wishlistId, id) => {
     axios.delete(`/api/wishlist/${wishlistId}/wishlistitems/${id}`)
       .then( res => setWishlistItems(wishlistitems.filter( wi => wi.id !== id)))
       .catch( err => {
