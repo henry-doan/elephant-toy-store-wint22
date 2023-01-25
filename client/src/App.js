@@ -13,7 +13,7 @@ import ItemForm from './components/items/ItemForm';
 import OrderForm from './components/orders/OrderForm';
 import Wishlists from './components/wishlists/Wishlists';
 import WishlistForm from './components/wishlists/WishlistForm';
-
+import ItemShow from './components/items/ItemsShow';
 
 const App = () => (
   <>
@@ -21,12 +21,13 @@ const App = () => (
     <FetchUser>
       <>
         <Routes>
+          <Route path='/items' element={<Items/>} />
           <Route path='/' element={<Home />} />
           <Route path='/login' element={<Login />} />
           <Route path='/register' element={<Register />} />
           <Route path='/items' element={<Items />} />
           <Route path='/categorys' element={<Categorys />} />
-
+          <Route path='/items/:id' element={<ItemShow/>} />
           <Route path='/' element={<ProtectedRoute />}>
             <Route path='/cart' element={<Orders />} />
             <Route path='/:id/updateItem' element={<ItemForm />} />
@@ -34,8 +35,6 @@ const App = () => (
             <Route path='/wishlists' element={<Wishlists />} />
             <Route path='/:id/updateWishlist' element={<WishlistForm />} />
           </Route>
-
-
           <Route path='/*' element={<Nomatch />} />
         </Routes>
       </>

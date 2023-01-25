@@ -11,6 +11,7 @@ import ItemsProvider from './providers/ItemsProvider';
 import OrderProvider from './providers/OrderProvider';
 import ReviewProvider from './providers/ReviewProvider';
 import WishlistProvider from './providers/WishlistProvider';
+import WishlistItemProvider from './providers/WishlistItemsProvider';
 
 initMiddleware();
 
@@ -23,7 +24,9 @@ root.render(
           <OrderProvider>
             <ReviewProvider>
               <WishlistProvider>
-                <App />
+                <WishlistItemProvider>
+                  <App />
+                </WishlistItemProvider>
               </WishlistProvider>
             </ReviewProvider>
           </OrderProvider>
