@@ -1,5 +1,6 @@
 import { Image, Container, Row, Col, Button, Accordion } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import Newsletters from '../newsletter/Newsletters';
 
 const Home = () => (
   <>
@@ -80,6 +81,9 @@ const Home = () => (
         </Accordion.Body>
       </Accordion.Item>
     </Accordion>
+
+    <h1>The Elephant Toy Round-Up: A Newsletter for You!</h1>
+    <Newsletters/>
 
     <br />
     <br />

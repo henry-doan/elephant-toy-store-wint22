@@ -11,6 +11,7 @@ import ItemsProvider from './providers/ItemsProvider';
 import OrderProvider from './providers/OrderProvider';
 import ReviewProvider from './providers/ReviewProvider';
 import WishlistProvider from './providers/WishlistProvider';
+import NewsletterProvider from './providers/NewsletterProvider';
 
 initMiddleware();
 
@@ -18,17 +19,19 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <BrowserRouter>
-      <AuthProvider>
-        <ItemsProvider>
-          <OrderProvider>
-            <ReviewProvider>
-              <WishlistProvider>
-                <App />
-              </WishlistProvider>
-            </ReviewProvider>
-          </OrderProvider>
-        </ItemsProvider>
-      </AuthProvider>
+      <NewsletterProvider>
+        <AuthProvider>
+          <ItemsProvider>
+            <OrderProvider>
+              <ReviewProvider>
+                <WishlistProvider>
+                  <App />
+                </WishlistProvider>
+              </ReviewProvider>
+            </OrderProvider>
+          </ItemsProvider>
+        </AuthProvider>
+      </NewsletterProvider>
     </BrowserRouter>
   </React.StrictMode>
 );
