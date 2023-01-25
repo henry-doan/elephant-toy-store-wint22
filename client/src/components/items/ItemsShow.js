@@ -64,7 +64,7 @@ const ItemShow = ({ deleteItem, wishlists, getAllWishlists, addWishlistItem }) =
                     wishlists.map(  wl => 
                       <p>
                         {wl.wishlist_name}
-                        <Button onClick={addtoWishlist}>
+                        <Button onClick={() => addtoWishlist(wl.id)}>
                             +
                         </Button>
                       </p>

@@ -16,15 +16,15 @@ const WishlistItemShow = ({item_id, wishlist_id }) => {
   const { item_name, image } = item
 
   return (
-    <ListGroup.Item key={item_id}>
+    <ListGroup.Item>
      <Image src={image} alt={item_name} width='100px'/>
      {item_name} 
       <Button>
         Remove From Wishlist
       </Button>
-      <Link>
-      <Button to={`/items/${item_id}`} state={{ ...item }}>
-        view toy
+      <Link to={`/items/${item_id}`} state={{ ...item }}>
+      <Button>
+        View Toy
       </Button>
       </Link>
     </ListGroup.Item>

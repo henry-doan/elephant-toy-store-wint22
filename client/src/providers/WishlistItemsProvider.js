@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import { useParams } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 
 export const WishlistItemContext = React.createContext();
@@ -8,7 +7,6 @@ export const WishlistItemConsumer = WishlistItemContext.Consumer;
 
 const WishlistItemProvider = ({children}) => {
   const [wishlistitems, setWishlistItems] = useState([])
-  const { wishlistId } = useParams()
   const [msgs, setMsgs] = useState()
   const navigate = useNavigate()
 

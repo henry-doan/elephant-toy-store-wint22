@@ -6,9 +6,10 @@ Rails.application.routes.draw do
     resources :reviews
     resources :orders 
     resources :wishlists
-  end
-  resources :wishlists, except: [:index, :show, :create, :update, :destroy] do
+    
+    resources :wishlists, except: [:index, :show, :create, :update, :destroy] do
       resources :wishlist_items
     end
 
+  end
 end
