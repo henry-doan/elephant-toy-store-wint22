@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import { useParams } from 'react-router-dom';
 
 export const OrderItemContext = React.createContext();
 export const OrderItemConsumer = OrderItemContext.Consumer;
@@ -7,9 +8,10 @@ export const OrderItemConsumer = OrderItemContext.Consumer;
 const OrderItemProvider = ({ children }) => {
   const [orderItems, setOrderItems] = useState([])
   const [msgs, setMsgs] = useState()
+  const { orderId } = useParams()
 
   const getAllOrderItems = (orderId) => {
-    axios.get(`/orders/${orderId}/order_items`)
+    axios.get(`/api/orders/${orderId}/order_items`)
       .then( res => setOrderItems(res.data))
       .catch( err => {
         console.log(err)
@@ -18,7 +20,7 @@ const OrderItemProvider = ({ children }) => {
   }
 
   const addOrderItem = (orderItem, orderId) => {
-    axios.post(`/orders/${orderId}/order_items`, { orderItem })
+    axios.post(`/api/orders/${orderId}/order_items`, { orderItem })
       .then( res => setOrderItems([...orderItems, res.data]))
       .catch( err => {
         console.log(err)

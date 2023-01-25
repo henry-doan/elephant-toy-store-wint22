@@ -1,14 +1,40 @@
-import { Card, Button, Modal, Container, Row, Col } from 'react-bootstrap';
+import { Card, Button, Modal, Container, Row, Col, Image } from 'react-bootstrap';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { ItemConsumer } from '../../providers/ItemsProvider';
+import { OrderItemConsumer } from '../../providers/OrderItemProvider';
+import { OrderConsumer } from '../../providers/OrderProvider';
+import CartButton from './CartButton';
 
-const ItemShow = ({ id, item_name, description, quantity, category, discount, brand, deleteItem }) => {
+
+
+const ItemShow = ({ id, item_name, description, quantity, category, discount, brand, deleteItem, image, addOrderItem, addOrder, getAllOrders }) => {
   const [showing, setShow] = useState(false)
+  // const [value, setValue] = useState(0)
+  // const handleSelect = (e) => {
+  //   console.log(e)
+  //   setValue(e)
+  //   addOrderItem({item_id: id}, e)
+  // }
+  
+  // function GetOrderNumbers() {
+  //   const [orders, setOrders] = useState([])
+  //   useEffect(() => {
+  //     axios.get(`/api/orders`)
+  //     .then (res => setOrders(res.data))
+  //     .catch (err => console.log(err))
+  //   }, [])
+  //   return (
+  //   <>
+  //   {orders.map( o => <Dropdown.Item key={o.id} eventKey={o.id}>{o.order_number}</Dropdown.Item> )}
+  //   </>
+  //   )
+  // }
 
   return(
     <>
       <Card style={{ width: '10rem' }}>
+        <Card.Img variant="top" src={image} height='140px' />
         <Card.Body>
           <Card.Title>{item_name}</Card.Title>
           <Button variant="outline-dark" onClick={() => setShow(true)}>
@@ -34,22 +60,26 @@ const ItemShow = ({ id, item_name, description, quantity, category, discount, br
                     quantity,
                     category,
                     discount,
-                    brand
+                    brand,
+                    image
                   }}
                 >
                   <Button>Edit</Button>
                 </Link>
-                <Button
-                  onClick={() => deleteItem(id)}
-                >
-                  Delete
-                </Button>
-                <Link
-                  to={`/${id}/review`}
-                >
+                <Button onClick={() => deleteItem(id)}>Delete</Button>
+                <Link to={`/${id}/review`}>
                   <Button>Reviews</Button>
                 </Link>
+                <CartButton id={id}/>
               </Container>
+            </Col>
+            <Col>
+              <Image 
+                src={image} 
+                alt={item_name}
+                height='200px'
+                width='200px'
+              />
             </Col>
           </Row>
         </Modal.Body>
@@ -65,4 +95,17 @@ const ConnectedItemShow = (props) => (
   </ItemConsumer>
 )
 
-export default ConnectedItemShow;
+const ConnectedItemConsumer = (props) => (
+  <OrderItemConsumer>
+    { value => <ConnectedItemShow {...props} {...value} />}
+  </OrderItemConsumer>
+)
+
+const ConectedOrderConsumer = (props) => (
+  <OrderConsumer>
+    { value => <ConnectedItemConsumer {...props} {...value} />}
+  </OrderConsumer>
+)
+
+
+export default ConectedOrderConsumer;

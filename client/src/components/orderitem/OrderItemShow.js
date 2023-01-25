@@ -6,8 +6,8 @@ import { OrderConsumer } from '../../providers/OrderProvider';
 const OrderShow = ({ id, deleteOrderItem}) => {
   const [showing, setShow] = useState(false)
   
-  const { orderId } = useParams();
-  const { itemId } = userParams();
+  const { orderId } = useParams()
+  // const { itemId } = useParams()
 
   return(
     <>
