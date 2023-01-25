@@ -6,7 +6,6 @@ class Api::ItemsController < ApplicationController
   end
   
   def show
-    binding.pry
     render json: @item
   end
 

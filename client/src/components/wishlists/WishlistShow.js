@@ -2,6 +2,7 @@ import { Card, Button, Modal, Container, Row, Col } from 'react-bootstrap';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { WishlistConsumer } from '../../providers/WishlistProvider';
+import WishlistItemList from '../wishlistitems/WishlistItemList';
 
 const WishlistShow = ({ id, wish_item_quantity, wish_total, wishlist_name, deleteWishlist, updateWishlist }) => {
   const [showing, setShow] = useState(false)
@@ -50,11 +51,7 @@ const WishlistShow = ({ id, wish_item_quantity, wish_total, wishlist_name, delet
                 >
                   Delete
                 </Button>
-                {/* <Link
-                  to={`/${id}/wishitems`}
-                >
-                  <Button>Items</Button>
-                </Link> */}
+                <WishlistItemList wishlistId={id} />
               </Container>
             </Col>
           </Row>

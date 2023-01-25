@@ -10,5 +10,7 @@ Rails.application.routes.draw do
     resources :wishlists do
       resources :wishlist_items
     end
+    resources :orders 
+    resources :wishlists
   end
 end
