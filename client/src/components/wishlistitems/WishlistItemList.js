@@ -1,17 +1,28 @@
-import { Container, Row, Col } from 'react-bootstrap';
+import { Container, ListGroup,} from 'react-bootstrap';
+import { useEffect,} from 'react';
+import { WishlistItemConsumer } from '../../providers/WishlistItemsProvider';
+import WishlistItemShow from './WishlistItemShow';
 
-const WishlistItemList = ({ wishlistitems }) => (
-  <Container>
-    <Row sm='4'>
-      { wishlistitems.map( wi => 
-        <Col key={wi.id}>
-          {/* <WishlistItemShow 
-            {...wi}
-          /> */}
-        </Col>
-      )}
-    </Row>
-  </Container>
+const WishlistItemList = ({ wishlistitems, getAllWishlistItems, wishlistId }) => {
+  useEffect( () => {
+    getAllWishlistItems(wishlistId)
+  },[])
+
+  return (
+    <Container>
+       <ListGroup variant="flush">
+          { wishlistitems.map( wi => 
+            <WishlistItemShow { ...wi }/>
+          )}
+      </ListGroup>
+    </Container>
+  )
+}
+
+const ConnectedWishlistItemlist = (props) => (
+  <WishlistItemConsumer>
+    { value => <WishlistItemList {...value } {...props }/>}
+  </WishlistItemConsumer>
 )
 
-export default WishlistItemList;
+export default ConnectedWishlistItemlist;

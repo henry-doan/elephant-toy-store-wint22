@@ -8,7 +8,7 @@ Rails.application.routes.draw do
     resources :wishlists
   end
   resources :wishlists, except: [:index, :show, :create, :update, :destroy] do
-      resources :wishlistitems
+      resources :wishlist_items
     end
 
 end

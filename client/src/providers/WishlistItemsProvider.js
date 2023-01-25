@@ -1,10 +1,10 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 
 export const WishlistItemContext = React.createContext();
-export const WishlistItemsConsumer = WishlistItemsContext.Consumer;
+export const WishlistItemConsumer = WishlistItemContext.Consumer;
 
 const WishlistItemProvider = ({children}) => {
   const [wishlistitems, setWishlistItems] = useState([])
@@ -14,7 +14,7 @@ const WishlistItemProvider = ({children}) => {
 
 
   const getAllWishlistItems = (wishlistId) => {
-    axios.get(`/api/wishlist/${wishlistId}/wishlistitems`)
+    axios.get(`/api/wishlists/${wishlistId}/wishlist_items`)
       .then( res => setWishlistItems(res.data))
       .catch( err => {
         console.log(err)
@@ -23,7 +23,7 @@ const WishlistItemProvider = ({children}) => {
   }
 
   const addWishlistItem = (wishlistId, wishlistitem) => {
-    axios.post(`/api/wishlist/${wishlistId}/wishlistitems`, { wishlistitem })
+    axios.post(`/api/wishlists/${wishlistId}/wishlist_items`, { wishlistitem })
       .then( res => setWishlistItems([...wishlistitems, res.data]))
       .catch( err => {
         console.log(err)
@@ -32,7 +32,7 @@ const WishlistItemProvider = ({children}) => {
   }
 
    const updateWishlistItem = (wishlistId, id, wishlistitem) => {
-    axios.put(`/api/wishlist/${wishlistId}/wishlistitems/${id}`, { wishlistitem })
+    axios.put(`/api/wishlists/${wishlistId}/wishlist_items/${id}`, { wishlistitem })
       .then( res => {
         const newUpdatedWishListItems = wishlistitems.map( c => {
           if (c.id === id) {
@@ -48,8 +48,8 @@ const WishlistItemProvider = ({children}) => {
         })
     }
 
-  const deleteWishlistItem = (wishlistId, id) => {
-    axios.delete(`/api/wishlist/${wishlistId}/wishlistitems/${id}`)
+  const deleteWishlistItem = (wishlistId,id) => {
+    axios.delete(`/api/wishlists/${wishlistId}/wishlist_items/${id}`)
       .then( res => setWishlistItems(wishlistitems.filter( wi => wi.id !== id)))
       .catch( err => {
         console.log(err)
