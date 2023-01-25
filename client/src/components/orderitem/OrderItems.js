@@ -3,7 +3,8 @@ import OrderItemList from './OrderItemList';
 import { useState, useEffect } from "react";
 import { Container, Modal, Button } from 'react-bootstrap';
 
-const OrderItems = ({ orderItems, getAllOrderItems, msgs, setMsgs  }) => {
+const OrderItems = ({ orderItems, getAllOrderItems, msgs, setMsgs }) => {
+  const [adding, setAdd] = useState(false)
 
   useEffect( () => {
     getAllOrderItems()

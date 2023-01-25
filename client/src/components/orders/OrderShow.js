@@ -16,46 +16,47 @@ const OrderShow = ({ id, order_quantity, order_cost, order_number, est_shipping,
 
   return(
     <>
-<h1>{order_number}</h1>
-       <h2>{address}</h2>
-       <p>processed:
-         { processed ? " order is shipped" : " Not Shipped yet" }
-       </p>
-       <p>order_cost: {order_cost}</p>
-       <p>est_shipping: { processed ? <Moment format='MM-DD-YY'>{shipping}</Moment> : 'Not yet Shipped' }</p>
-       <p>order quantity: {order_quantity}</p>
-       <Link
-         to={`/${id}/updateOrder`}
-         state={{
-           id,
-           order_number,
-           processed,
-           est_shipping,
-           order_cost,
-           order_quantity,
-           address,
-         }}
-       >
-         <Button>Edit</Button>
-       </Link>
-       <Button
-         onClick={() => deleteOrder(id)}
-       >
-         Delete
-       </Button>
-        
-       <Modal show={showing} onHide={() => setShow(false)}>
-       <Modal.Header closeButton> Items in Order
-         </Modal.Header>
-         <Modal.Body>
-         <OrderItems />
-         </Modal.Body>
-       </Modal>
+      <h1>{order_number}</h1>
+      <h2>{address}</h2>
+      <p>processed:
+        { processed ? " order is shipped" : " Not Shipped yet" }
+      </p>
+      <p>order_cost: {order_cost}</p>
+      <p>est_shipping: { processed ? <Moment format='MM-DD-YY'>{shipping}</Moment> : 'Not yet Shipped' }</p>
+      <p>order quantity: {order_quantity}</p>
+      <Link
+        to={`/${id}/updateOrder`}
+        state={{
+          id,
+          order_number,
+          processed,
+          est_shipping,
+          order_cost,
+          order_quantity,
+          address,
+        }}
+      >
+        <Button>Edit</Button>
+      </Link>
+      <Button
+        onClick={() => deleteOrder(id)}
+      >
+        Delete
+      </Button>
 
-       <Button onClick={() => setShow(true)}> Order Items </Button>
-       <br />
-     </>
-   )
+      <Modal show={showing} onHide={() => setShow(false)}>
+
+        <Modal.Header closeButton> Items in Order
+        </Modal.Header>
+        <Modal.Body>
+          <OrderItems />
+        </Modal.Body>
+      </Modal>
+      
+      <Button onClick={() => setShow(true)}> Order Items </Button>
+      <br />
+    </>
+  )
 }
 const ConnectedOrderShow = (props) => (
   <OrderConsumer>

@@ -3,8 +3,16 @@ import { Card, Button, Modal, Container, Row, Col } from 'react-bootstrap';
  import { useParams } from 'react-router-dom';
  import { OrderConsumer } from '../../providers/OrderProvider';
 
+<<<<<<< HEAD
  const OrderShow = ({ id, deleteOrderItem}) => {
    const [showing, setShow] = useState(false)
+=======
+const OrderShow = ({ id, deleteOrderItem}) => {
+  const [showing, setShow] = useState(false)
+  
+  const { orderId } = useParams()
+  // const { itemId } = useParams()
+>>>>>>> 98466f3 (item linked to cart)
 
    const { orderId } = useParams()
    // const { itemId } = useParams()
