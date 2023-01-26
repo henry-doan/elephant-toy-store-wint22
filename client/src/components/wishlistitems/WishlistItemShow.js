@@ -4,7 +4,7 @@ import { WishlistItemConsumer } from '../../providers/WishlistItemsProvider';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 
-const WishlistItemShow = ({ item_id, wishlistId, deleteWishlistItem }) => {
+const WishlistItemShow = ({ id, item_id, wishlistId, deleteWishlistItem }) => {
   const [item, setItem] = useState({ item_name: '' , description: '' , quantity: "" , category: "" , discount: "" , brand: "" , image: "" })
   
   useEffect( () => {
@@ -19,7 +19,7 @@ const WishlistItemShow = ({ item_id, wishlistId, deleteWishlistItem }) => {
     <ListGroup.Item>
      <Image src={image} alt={item_name} width='100px'/>
      {item_name} 
-      <Button onClick={() => deleteWishlistItem(wishlistId, item_id)}>
+      <Button onClick={() => deleteWishlistItem(wishlistId, id)}>
         Remove From Wishlist
       </Button>
       <Link to={`/items/${item_id}`} state={{ ...item }}>
