@@ -28,7 +28,12 @@ const ItemShow = ({ id, item_name, description, quantity, category, discount, br
       <Row>
         <Col>
           <Container>
-            <Image variant="top" src={image} height='140px' />
+          <Image 
+                 src={image} 
+                 alt={item_name}
+                 height='200px'
+                 width='200px'
+               />
             <h1>{item_name}</h1>
             <Link
               to={`/${id}/updateItem`}
