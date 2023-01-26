@@ -1,5 +1,6 @@
 import { Image, Container, Row, Col, Button, Accordion } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import Featureditem from '../items/Featureditem';
 
 const Home = () => (
   <>
@@ -80,7 +81,7 @@ const Home = () => (
         </Accordion.Body>
       </Accordion.Item>
     </Accordion>
-
+    <Featureditem />
     <br />
     <br />
     <br />

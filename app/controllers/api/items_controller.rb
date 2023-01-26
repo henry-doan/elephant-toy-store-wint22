@@ -30,7 +30,10 @@ class Api::ItemsController < ApplicationController
     @item.destroy
     render json: { message: 'item deleted' }
   end
-
+ 
+  def featured
+    render json: Item.all.sample
+  end
   private
   def item_params
     params.require(:item).permit(:item_name, :description, :cost, :quantity, :category, :discount, :brand, :image)
