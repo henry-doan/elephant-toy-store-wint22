@@ -9,12 +9,22 @@ const MainNavbar = ({ user, handleLogout}) => {
       if (user) {
         return (
           <>
-            <Link to='/cart'>
-              <Button>Cart</Button>
-            </Link>
-            <Link to='/wishlists'>
-              <Button>Wishlists</Button>
-            </Link>
+            { user.admin ? 
+              <>
+                <Link to='/newsletters'>
+                  <Button>Subscriber List</Button>
+                </Link>
+              </>
+              : 
+              <>
+                <Link to='/cart'>
+                  <Button>Cart</Button>
+                </Link>
+                <Link to='/wishlists'>
+                  <Button>Wishlists</Button>
+                </Link>
+              </>
+            }
             <Button onClick={() => handleLogout() }>
               Logout
             </Button>

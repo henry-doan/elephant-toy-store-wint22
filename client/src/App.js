@@ -13,6 +13,8 @@ import ItemForm from './components/items/ItemForm';
 import OrderForm from './components/orders/OrderForm';
 import Wishlists from './components/wishlists/Wishlists';
 import WishlistForm from './components/wishlists/WishlistForm';
+import AdminProtectedRoute from './components/auth/AdminProtectedRoute';
+import NewsletterList from './components/newsletter/NewsletterList';
 
 
 const App = () => (
@@ -35,6 +37,9 @@ const App = () => (
             <Route path='/:id/updateWishlist' element={<WishlistForm />} />
           </Route>
 
+          <Route path='/' element={<AdminProtectedRoute />} >
+            <Route path='/newsletters' element={<NewsletterList />} />
+          </Route>
 
           <Route path='/*' element={<Nomatch />} />
         </Routes>
