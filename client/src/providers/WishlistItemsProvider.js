@@ -46,8 +46,8 @@ const WishlistItemProvider = ({children}) => {
         })
     }
 
-  const deleteWishlistItem = (wishlistId,id) => {
-    axios.delete(`/api/wishlists/${wishlistId}/wishlist_items/${id}`)
+  const deleteWishlistItem = (wishlist_id, id) => {
+    axios.delete(`/api/wishlists/${wishlist_id}/wishlist_items/${id}`)
       .then( res => setWishlistItems(wishlistitems.filter( wi => wi.id !== id)))
       .catch( err => {
         console.log(err)

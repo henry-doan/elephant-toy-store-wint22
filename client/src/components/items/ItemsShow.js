@@ -106,18 +106,6 @@ const ConectedOrderConsumer = (props) => (
   </OrderConsumer>
 )
 
-const ConnectedItemConsumer = (props) => (
-  <OrderItemConsumer>
-    { value => <ConnectedItemShow {...props} {...value} />}
-  </OrderItemConsumer>
-)
-
-const ConectedOrderConsumer = (props) => (
-  <OrderConsumer>
-    { value => <ConnectedItemConsumer {...props} {...value} />}
-  </OrderConsumer>
-)
-
 const ConnectedWishlistItemShow = (props) => (
   <WishlistConsumer>
     { value => <ConectedOrderConsumer {...props} {...value} />}

@@ -10,7 +10,6 @@ Rails.application.routes.draw do
       resources :order_items
     end
 
-    
     resources :wishlists, except: [:index, :show, :create, :update, :destroy] do
       resources :wishlist_items
     end
