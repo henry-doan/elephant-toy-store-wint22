@@ -12,7 +12,7 @@ const WishlistItemList = ({ wishlistitems, getAllWishlistItems, wishlistId }) =>
     <Container>
        <ListGroup variant="flush">
           { wishlistitems.map( wi => 
-            <WishlistItemShow { ...wi } key={wi.id}/>
+            <WishlistItemShow { ...wi } key={wi.id} wishlistId={wishlistId}/>
           )}
       </ListGroup>
     </Container>
