@@ -1,18 +1,42 @@
-import { Container, Row, Col } from 'react-bootstrap';
+import { Container, Table } from 'react-bootstrap';
 import NewsletterShow from './NewsletterShow';
+import { NewsletterConsumer } from "../../providers/NewsletterProvider";
+import { useEffect } from 'react';
 
-const NewsletterList = ({ newsletters }) => (
-  <Container>
-    <Row md='4'>
-      { newsletters.map( n => 
-        <Col key={n.id}>
-          <NewsletterShow 
-            {...n}
-          />
-        </Col>
-      )}
-    </Row>
-  </Container>
+const NewsletterList = ({ newsletters, getAllNewsletters }) => {
+
+  useEffect( () => {
+    getAllNewsletters()
+  }, [])
+
+  return (
+    <Container>
+      <Table striped>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          { newsletters.map( n => 
+            <tr key={n.id}>
+              <NewsletterShow 
+                {...n}
+              />
+            </tr>
+          )}
+        </tbody>
+      </Table>
+    </Container>
+  )
+}
+
+const ConnectedNewsletterList = (props) => (
+  <NewsletterConsumer>
+    { value => <NewsletterList {...value} {...props} />}
+  </NewsletterConsumer>
 )
 
-export default NewsletterList;
+export default ConnectedNewsletterList;

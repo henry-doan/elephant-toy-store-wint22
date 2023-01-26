@@ -1,34 +1,19 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { NewsletterConsumer } from '../../providers/NewsletterProvider';
 import { Form, Button } from 'react-bootstrap';
-import { useLocation, useParams } from 'react-router-dom';
 
-const NewsletterForm = ({ setAdd, addNewsletter, updateNewsletter }) => {
+const NewsletterForm = ({ addNewsletter }) => {
   const [newsletter, setNewsletter] = useState({ subscriber_name: '', email: '' })
-  const location = useLocation()
-  const { id } = useParams()
-
-  useEffect( () => {
-    if (id) {
-      const { subscriber_name, email } = location.state
-      setNewsletter({ subscriber_name, email })
-    }
-  }, [])
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    if (id) {
-      updateNewsletter(id, newsletter)
-    } else {
-      addNewsletter(newsletter)
-      setAdd(false)
-    }
+    addNewsletter(newsletter)
     setNewsletter({ subscriber_name: '', email: '' })
   }
 
   return(
     <>
-      { id ? <h1>Subscribe to our Newsletter</h1> : null}
+      <h3>Subscribe to our Newsletter</h3>
       <Form onSubmit={handleSubmit}>
         <Form.Group className="mb-3">
           <Form.Label>Your Name</Form.Label>
