@@ -1,89 +1,91 @@
 import { Card, Button, Modal, Container, Row, Col, Image } from 'react-bootstrap';
-import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { useState, useEffect } from 'react';
+import { Link, useParams, useLocation } from 'react-router-dom';
 import { ItemConsumer } from '../../providers/ItemsProvider';
 import { OrderItemConsumer } from '../../providers/OrderItemProvider';
 import { OrderConsumer } from '../../providers/OrderProvider';
 import CartButton from './CartButton';
+import { WishlistConsumer } from '../../providers/WishlistProvider';
+import { WishlistItemConsumer } from '../../providers/WishlistItemsProvider';
 
 
 
-const ItemShow = ({ id, item_name, description, quantity, category, discount, brand, deleteItem, image, addOrderItem, addOrder, getAllOrders }) => {
+const ItemShow = ({ id, item_name, description, quantity, category, discount, brand, image, addOrderItem, addOrder, getAllOrders, deleteItem, wishlists, getAllWishlists, addWishlistItem }) => {
   const [showing, setShow] = useState(false)
-  // const [value, setValue] = useState(0)
-  // const handleSelect = (e) => {
-  //   console.log(e)
-  //   setValue(e)
-  //   addOrderItem({item_id: id}, e)
-  // }
-  
-  // function GetOrderNumbers() {
-  //   const [orders, setOrders] = useState([])
-  //   useEffect(() => {
-  //     axios.get(`/api/orders`)
-  //     .then (res => setOrders(res.data))
-  //     .catch (err => console.log(err))
-  //   }, [])
-  //   return (
-  //   <>
-  //   {orders.map( o => <Dropdown.Item key={o.id} eventKey={o.id}>{o.order_number}</Dropdown.Item> )}
-  //   </>
-  //   )
-  // }
+  const { id } = useParams()
+  const location = useLocation()
+  const { item_name, description, quantity, category, discount, brand } = location.state
+
+  useEffect( () => {
+    getAllWishlists()
+  },[])
+
+  const addtoWishlist = (wishlistId) => {
+    addWishlistItem(wishlistId, {item_id: id})
+    setShow(false)
+  }
 
   return(
     <>
-      <Card style={{ width: '10rem' }}>
-        <Card.Img variant="top" src={image} height='140px' />
-        <Card.Body>
-          <Card.Title>{item_name}</Card.Title>
-          <Button variant="outline-dark" onClick={() => setShow(true)}>
-            Show
-          </Button>
-        </Card.Body>
-      </Card>
-
-      <Modal show={showing} onHide={() => setShow(false)}>
-        <Modal.Header closeButton>
-        </Modal.Header>
-        <Modal.Body>
-          <Row>
-            <Col>
-              <Container>
-                <h1>{item_name}</h1>
-                <Link
-                  to={`/${id}/updateItem`}
-                  state={{
-                    id,
-                    item_name,
-                    description,
-                    quantity,
-                    category,
-                    discount,
-                    brand,
-                    image
-                  }}
-                >
-                  <Button>Edit</Button>
-                </Link>
-                <Button onClick={() => deleteItem(id)}>Delete</Button>
-                <Link to={`/${id}/review`}>
-                  <Button>Reviews</Button>
-                </Link>
-                <CartButton id={id}/>
-              </Container>
-            </Col>
-            <Col>
-              <Image 
+      <Row>
+        <Col>
+          <Container>
+               <Image 
                 src={image} 
                 alt={item_name}
                 height='200px'
                 width='200px'
               />
-            </Col>
-          </Row>
-        </Modal.Body>
-      </Modal>
+            <h1>{item_name}</h1>
+            <Link
+              to={`/${id}/updateItem`}
+              state={{
+                id,
+                item_name,
+                description,
+                quantity,
+                category,
+                discount,
+                brand
+              }}
+            >
+              <Button>Edit</Button>
+            </Link>
+            <Button
+              onClick={() => deleteItem(id)}
+            >
+              Delete
+            </Button>
+            
+                <Link to={`/${id}/review`}>
+                  <Button>Reviews</Button>
+                </Link>
+                
+                <CartButton id={id}/>
+                <Button variant="primary" onClick={() => setShow(true)}>
+                  Add to Wishlists!
+                </Button>
+                
+                <Modal show={showing} onHide={() => setShow(false)}>
+                  <Modal.Header closeButton>
+                  <Modal.Title>Which Wishlist is Prefered?</Modal.Title>
+                </Modal.Header>
+                <Modal.Body>
+                    {
+                      wishlists.map(  wl => 
+                        <p>
+                          {wl.wishlist_name}
+                          <Button onClick={() => addtoWishlist(wl.id)}>
+                              +
+                          </Button>
+                        </p>
+                        )
+                    }
+                </Modal.Body>
+            </Modal>
+          </Container>
+        </Col>
+      </Row>
       <br />
     </>
   )
@@ -107,5 +109,16 @@ const ConectedOrderConsumer = (props) => (
   </OrderConsumer>
 )
 
+const ConnectedWishlistItemShow = (props) => (
+  <WishlistConsumer>
+    { value => <ConectedOrderConsumer {...props} {...value} />}
+  </WishlistConsumer>
+)
 
-export default ConectedOrderConsumer;
+const ConnectedWishlistItemItemShow = (props) => (
+  <WishlistItemConsumer>
+    { value => <ConnectedWishlistItemShow {...props} {...value} />}
+  </WishlistItemConsumer>
+)
+
+export default ConnectedWishlistItemItemShow;
