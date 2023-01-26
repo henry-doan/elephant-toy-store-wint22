@@ -3,13 +3,34 @@ import ItemList from './ItemList';
 import { useState, useEffect } from "react";
 import { Container, Modal, Button } from 'react-bootstrap';
 import ItemForm from './ItemForm';
+import Filter from "./Filter";
 
 const Items = ({ items, getAllItems, msgs, setMsgs  }) => {
   const [adding, setAdd] = useState(false)
+  const [filter, setFilter] = useState("ALL")
 
   useEffect( () => {
     getAllItems()
   }, [])
+
+  const ItemFilter = () => {
+    switch(filter) {
+      case 'Disney':
+        return items.filter( t => t.brand === "Disney")
+      case 'Lego':
+        return items.filter( t => t.brand === "Lego")
+      case 'Barbie':
+        return items.filter( t => t.brand === "Barbie")
+      case 'Learning':
+        return items.filter( t => t.category === "Learning")
+      case 'Sports':
+        return items.filter( t => t.category === "Sports")
+      case 'Art':
+        return items.filter( t => t.category === "Art")
+      default: 
+        return items
+  }
+}
 
   return (
     <Container>
@@ -17,6 +38,11 @@ const Items = ({ items, getAllItems, msgs, setMsgs  }) => {
       <Button variant="primary" onClick={() => setAdd(true)}>
         +
       </Button>
+      <Filter 
+      filter={filter}
+      setFilter={setFilter}
+      />
+        
       <Modal show={adding} onHide={() => setAdd(false)}>
         <Modal.Header closeButton>
           <Modal.Title>Create Item</Modal.Title>
@@ -29,7 +55,7 @@ const Items = ({ items, getAllItems, msgs, setMsgs  }) => {
       </Modal>
       <h1>Toys</h1>
       <ItemList 
-        items={items}
+        items={ItemFilter()}
       />
     </Container>
   )
