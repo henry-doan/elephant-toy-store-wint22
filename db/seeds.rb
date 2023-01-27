@@ -29,3 +29,9 @@ end
 puts("#{Item.all.count} items created")
 
 
+User.create(
+  name: Faker::Games::SuperMario.character,
+  email: "admin@admin.com",
+  password: 'password',
+  admin: true
+)

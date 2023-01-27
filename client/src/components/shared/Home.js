@@ -7,7 +7,8 @@ const Home = () => (
   <>
     <Image 
       src='https://images.unsplash.com/photo-1608096281339-5bcae1ec2f12?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2369&q=80'
-      alt='home'
+      alt='home' width='300px'
+
     />
     <Container>
       <Row>
@@ -43,7 +44,8 @@ const Home = () => (
         <Col>
           <Image 
             src="https://images.unsplash.com/photo-1607923432780-7a9c30adcb72?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2369&q=80"
-            alt='head2'
+            alt='head2' width='300px'
+
           />
         </Col>
         <Col>

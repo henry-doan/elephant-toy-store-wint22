@@ -16,7 +16,7 @@ import WishlistForm from './components/wishlists/WishlistForm';
 import ItemShow from './components/items/ItemsShow';
 import AdminProtectedRoute from './components/auth/AdminProtectedRoute';
 import NewsletterList from './components/newsletter/NewsletterList';
-
+import About from './components/shared/About';
 
 const App = () => (
   <>
@@ -30,6 +30,7 @@ const App = () => (
           <Route path='/register' element={<Register />} />
           <Route path='/items' element={<Items />} />
           <Route path='/categorys' element={<Categorys />} />
+          <Route path='/about' element={<About/>} />
           <Route path='/items/:id' element={<ItemShow/>} />
           <Route path='/' element={<ProtectedRoute />}>
             <Route path='/cart' element={<Orders />} />

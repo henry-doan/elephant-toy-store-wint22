@@ -10,6 +10,11 @@ Rails.application.routes.draw do
     resources :wishlists, except: [:index, :show, :create, :update, :destroy] do
       resources :wishlist_items
     end
+
+    resources :orders, except: [:index, :show, :create, :update, :destroy] do
+      resources :order_items
+    end
+
     get "/featured", to: "items#featured"
     resources :newsletters
   end

@@ -1,11 +1,14 @@
-import { Button, Container, Row, Col, Modal } from 'react-bootstrap';
 import { useState, useEffect } from 'react';
 import { Link, useParams, useLocation } from 'react-router-dom';
 import { ItemConsumer } from '../../providers/ItemsProvider';
 import { WishlistConsumer } from '../../providers/WishlistProvider';
 import { WishlistItemConsumer } from '../../providers/WishlistItemsProvider';
+import { Card, Button, Modal, Container, Row, Col, Image } from 'react-bootstrap';
+import { OrderItemConsumer } from '../../providers/OrderItemProvider';
+import { OrderConsumer } from '../../providers/OrderProvider';
+import CartButton from './CartButton';
 
-const ItemShow = ({ deleteItem, wishlists, getAllWishlists, addWishlistItem }) => {
+const ItemShow = ({ deleteItem, image, wishlists, getAllWishlists, addWishlistItem }) => {
   const [showing, setShow] = useState(false)
   const { id } = useParams()
   const location = useLocation()
@@ -25,7 +28,12 @@ const ItemShow = ({ deleteItem, wishlists, getAllWishlists, addWishlistItem }) =
       <Row>
         <Col>
           <Container>
-            {/* add item image */}
+          <Image 
+                 src={image} 
+                 alt={item_name}
+                 height='200px'
+                 width='200px'
+               />
             <h1>{item_name}</h1>
             <Link
               to={`/${id}/updateItem`}
@@ -51,6 +59,7 @@ const ItemShow = ({ deleteItem, wishlists, getAllWishlists, addWishlistItem }) =
             >
               <Button>Reviews</Button>
             </Link>
+            <CartButton id={id}/>
             <Button variant="primary" onClick={() => setShow(true)}>
               Add to Wishlists!
             </Button>
@@ -98,4 +107,16 @@ const ConnectedWishlistItemItemShow = (props) => (
   </WishlistItemConsumer>
 )
 
-export default ConnectedWishlistItemItemShow;
+const ConnectedItemConsumer = (props) => (
+  <OrderItemConsumer>
+    { value => <ConnectedWishlistItemItemShow {...props} {...value} />}
+  </OrderItemConsumer>
+)
+
+const ConectedOrderConsumer = (props) => (
+  <OrderConsumer>
+    { value => <ConnectedItemConsumer {...props} {...value} />}
+  </OrderConsumer>
+)
+
+export default ConectedOrderConsumer;
