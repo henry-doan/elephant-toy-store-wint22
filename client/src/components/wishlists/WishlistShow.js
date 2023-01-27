@@ -6,12 +6,6 @@ import WishlistItemList from '../wishlistitems/WishlistItemList';
 
 const WishlistShow = ({ id, wish_item_quantity, wish_total, wishlist_name, deleteWishlist, updateWishlist }) => {
   const [showing, setShow] = useState(false)
-  
-  function randomDate(start, end) {
-    return new Date(start.getTime() + Math.random() * (end.getTime() - start.getTime()));
-  }
-  
-  const shipping = randomDate(new Date(2023, 20, 1), new Date());
 
   return(
     <>
