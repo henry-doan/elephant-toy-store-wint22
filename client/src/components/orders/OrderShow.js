@@ -56,7 +56,6 @@ const OrderShow = ({ id, order_quantity, order_cost, order_number, est_shipping,
           </Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <p>Hello</p>
           <OrderItems 
           orderId={id}
           />
