@@ -13,6 +13,7 @@ import ItemForm from './components/items/ItemForm';
 import OrderForm from './components/orders/OrderForm';
 import Wishlists from './components/wishlists/Wishlists';
 import WishlistForm from './components/wishlists/WishlistForm';
+import OrderItemShow from './components/orderitem/OrderItemShow';
 
 
 const App = () => (

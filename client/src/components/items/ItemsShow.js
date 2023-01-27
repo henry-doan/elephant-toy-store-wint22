@@ -8,28 +8,8 @@ import CartButton from './CartButton';
 
 
 
-const ItemShow = ({ id, item_name, description, quantity, category, discount, brand, deleteItem, image, addOrderItem, addOrder, getAllOrders }) => {
+const ItemShow = ({ id, item_name, description, quantity, category, discount, brand, deleteItem, image }) => {
   const [showing, setShow] = useState(false)
-  // const [value, setValue] = useState(0)
-  // const handleSelect = (e) => {
-  //   console.log(e)
-  //   setValue(e)
-  //   addOrderItem({item_id: id}, e)
-  // }
-  
-  // function GetOrderNumbers() {
-  //   const [orders, setOrders] = useState([])
-  //   useEffect(() => {
-  //     axios.get(`/api/orders`)
-  //     .then (res => setOrders(res.data))
-  //     .catch (err => console.log(err))
-  //   }, [])
-  //   return (
-  //   <>
-  //   {orders.map( o => <Dropdown.Item key={o.id} eventKey={o.id}>{o.order_number}</Dropdown.Item> )}
-  //   </>
-  //   )
-  // }
 
   return(
     <>

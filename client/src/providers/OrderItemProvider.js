@@ -8,8 +8,8 @@ export const OrderItemConsumer = OrderItemContext.Consumer;
 const OrderItemProvider = ({ children }) => {
   const [orderItems, setOrderItems] = useState([])
   const [msgs, setMsgs] = useState()
-  const { orderId } = useParams()
 
+  
   const getAllOrderItems = (orderId) => {
     axios.get(`/api/orders/${orderId}/order_items`)
       .then( res => setOrderItems(res.data))
@@ -29,7 +29,7 @@ const OrderItemProvider = ({ children }) => {
   }
 
   const updateOrderItem = (id, orderItem, orderId) => {
-    axios.put(`/orders/${orderId}/order_items/${id}`, { orderItem })
+    axios.put(`/api/orders/${orderId}/order_items/${id}`, { orderItem })
       .then(res => {
         const newUpdatedOrderItems = orderItems.map( c => {
           if (c.id === id) {
@@ -46,7 +46,7 @@ const OrderItemProvider = ({ children }) => {
   }
 
   const deleteOrderItem = (id, orderId) => {
-    axios.delete(`/orders/${orderId}/order_items/${id}`)
+    axios.delete(`/api/orders/${orderId}/order_items/${id}`)
       .then( res => setOrderItems( orderItems.filter(c => c.id !== id)))
       .catch( err => {
         console.log(err)
