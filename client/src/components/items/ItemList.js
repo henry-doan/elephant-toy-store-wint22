@@ -8,7 +8,7 @@ const ItemList = ({ items }) => (
         <Col key={c.id}>
           <Link to={`/items/${c.id}`} state={{ ...c}}>
             <Card style={{ width: '10rem' }}>
-              <Card.Img variant='top' src={c.img}/>
+              <Card.Img variant='top' src={c.image}/>
               <Card.Body>
                 <Card.Title>{c.item_name}</Card.Title>
               </Card.Body>

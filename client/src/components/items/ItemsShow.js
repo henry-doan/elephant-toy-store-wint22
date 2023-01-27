@@ -8,11 +8,11 @@ import { OrderItemConsumer } from '../../providers/OrderItemProvider';
 import { OrderConsumer } from '../../providers/OrderProvider';
 import CartButton from './CartButton';
 
-const ItemShow = ({ deleteItem, image, wishlists, getAllWishlists, addWishlistItem }) => {
+const ItemShow = ({ deleteItem, wishlists, getAllWishlists, addWishlistItem }) => {
   const [showing, setShow] = useState(false)
   const { id } = useParams()
   const location = useLocation()
-  const { item_name, description, quantity, category, discount, brand } = location.state
+  const { item_name, description, quantity, category, discount, brand, image } = location.state
 
   useEffect( () => {
     getAllWishlists()

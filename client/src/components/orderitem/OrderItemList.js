@@ -1,18 +1,19 @@
 import { Container, Row, Col } from 'react-bootstrap';
- import OrderItemShow from './OrderItemShow';
+import OrderItemShow from './OrderItemShow';
 
- const OrderItemList = ({ orderItem }) => (
-   <Container>
-     <Row md='4'>
-       { orderItem.map( c => 
-         <Col key={c.id}>
-           <OrderItemShow 
-             {...c}
-           />
-         </Col>
-       )}
-     </Row>
-   </Container>
- )
+const OrderItemList = ({ orderItems, orderId }) => (
+  <Container>
+    { orderItems.map( c => 
+      <Row md='4'>
+        <Col key={c.id}>
+          <OrderItemShow 
+            {...c}
+            orderId = {orderId}
+          />
+        </Col>
+      </Row>
+    )}
+  </Container>
+)
 
 export default OrderItemList;
