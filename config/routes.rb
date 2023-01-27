@@ -11,5 +11,6 @@ Rails.application.routes.draw do
       resources :wishlist_items
     end
     get "/featured", to: "items#featured"
+    resources :newsletters
   end
 end
