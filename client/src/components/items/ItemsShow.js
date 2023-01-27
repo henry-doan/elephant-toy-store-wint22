@@ -8,7 +8,7 @@ import { OrderItemConsumer } from '../../providers/OrderItemProvider';
 import { OrderConsumer } from '../../providers/OrderProvider';
 import CartButton from './CartButton';
 
-const ItemShow = ({ id, item_name, description, quantity, category, discount, brand, deleteItem, image, addOrderItem, addOrder, getAllOrders, wishlists, getAllWishlists, addWishlistItem  }) => {
+const ItemShow = ({ deleteItem, image, wishlists, getAllWishlists, addWishlistItem }) => {
   const [showing, setShow] = useState(false)
   const { id } = useParams()
   const location = useLocation()
