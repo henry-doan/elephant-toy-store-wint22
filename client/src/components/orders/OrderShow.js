@@ -44,15 +44,24 @@ const OrderShow = ({ id, order_quantity, order_cost, order_number, est_shipping,
         Delete
       </Button>
 
-      <Modal show={showing} onHide={() => setShow(false)}>
-
-        <Modal.Header closeButton> Items in Order
+      <Modal show={showing} onHide={() => setShow(false)}
+      dialogClassName="modal-90w"
+      aria-labelledby="example-custom-modal-styling-title"
+      centered
+      >
+        <Modal.Header closeButton> 
+          <Modal.Title
+          id="example-custom-modal-styling-title">
+            Items in Order
+          </Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <OrderItems />
+          <p>Hello</p>
+          <OrderItems 
+          orderId={id}
+          />
         </Modal.Body>
       </Modal>
-      
       <Button onClick={() => setShow(true)}> Order Items </Button>
       <br />
     </>

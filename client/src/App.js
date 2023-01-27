@@ -18,6 +18,7 @@ import AdminProtectedRoute from './components/auth/AdminProtectedRoute';
 import NewsletterList from './components/newsletter/NewsletterList';
 import About from './components/shared/About';
 
+
 const App = () => (
   <>
     <MainNavbar />

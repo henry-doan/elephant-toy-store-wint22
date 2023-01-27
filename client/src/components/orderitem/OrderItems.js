@@ -2,26 +2,21 @@ import { OrderItemConsumer } from "../../providers/OrderItemProvider";
 import OrderItemList from './OrderItemList';
 import { useState, useEffect } from "react";
 import { Container, Modal, Button } from 'react-bootstrap';
+import { useParams } from "react-router-dom";
 
-const OrderItems = ({ orderItems, getAllOrderItems, msgs, setMsgs }) => {
+const OrderItems = ({ orderItems, getAllOrderItems, msgs, setMsgs, orderId }) => {
   const [adding, setAdd] = useState(false)
 
   useEffect( () => {
-    getAllOrderItems()
+    getAllOrderItems(orderId)
   }, [])
 
   return (
     <Container>
-      <Button variant="primary" onClick={() => setAdd(true)}>
-        +
-      </Button>
-      <Modal show={adding} onHide={() => setAdd(false)}>
-        <Modal.Header closeButton>
-        </Modal.Header>
-      </Modal>
       <h1>My Order Stuff</h1>
       <OrderItemList 
-        orderItems={orderItems}
+        orderItems = {orderItems}
+        orderId = {orderId}
       />
     </Container>
   )
