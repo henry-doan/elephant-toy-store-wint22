@@ -32,7 +32,7 @@ end
     category: categories.sample ,
     discount: Faker::Number.between(from: 0.0, to: 0.99),
     brand: brands.sample ,
-    image: 'https://images.unsplash.com/photo-1582845512747-e42001c95638?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2340&q=80'
+    image: 'https://images.unsplash.com/photo-1632435188736-f2f436a0e85a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80'
   )
 end
 

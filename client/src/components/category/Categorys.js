@@ -1,9 +1,12 @@
 import CategoryHeader from "./CategoryHeader";
+import CategoryPromo from './CategoryPromo';
 
 
 const Categorys = () => (
   <>
-    <CategoryHeader />
+    <CategoryHeader/>
+    <CategoryPromo/>
+    <br />
   </>
 )
 

@@ -1,6 +1,14 @@
 import { AuthConsumer } from "../../providers/AuthProvider";
 import { Link } from 'react-router-dom';
-import { Button } from 'react-bootstrap';
+import { Image, Row, Col } from 'react-bootstrap';
+import SmallLogo from '../images/SmallLogo.png';
+import CartLogo from '../images/CartLogo.png';
+import BagLogo from '../images/BagLogo.png';
+import AccountLogo from '../images/AccountLogo.png';
+import AccountRegLogo from '../images/AccountRegLogo.png';
+import LogoutIcon from '../images/LogoutIcon.png';
+import { NavBtn } from "../styles/NewsletterStyles";
+import AdminIcon from '../images/AdminIcon.png';
 
 const MainNavbar = ({ user, handleLogout}) => {
   
@@ -12,22 +20,42 @@ const MainNavbar = ({ user, handleLogout}) => {
             { user.admin ? 
               <>
                 <Link to='/newsletters'>
-                  <Button>Subscriber List</Button>
+                  <Image 
+                    src={AdminIcon}
+                    alt='Elephant Store' 
+                    width='30px'
+                    className='me-3'
+                  />
                 </Link>
               </>
               : 
               <>
                 <Link to='/cart'>
-                  <Button>Cart</Button>
+                  <Image 
+                    src={CartLogo}
+                    alt='Elephant Store' 
+                    width='30px'
+                    className='me-3'
+                  />
                 </Link>
                 <Link to='/wishlists'>
-                  <Button>Wishlists</Button>
+                  <Image 
+                    src={BagLogo}
+                    alt='Elephant Store' 
+                    width='30px'
+                    className='me-3'
+                  />
                 </Link>
               </>
             }
-            <Button onClick={() => handleLogout() }>
-              Logout
-            </Button>
+            <Link onClick={() => handleLogout() }>
+              <Image 
+                src={LogoutIcon}
+                alt='Elephant Store' 
+                width='30px'
+                className='me-3'
+              />
+            </Link>
           </>
         )
       } else {
@@ -35,10 +63,20 @@ const MainNavbar = ({ user, handleLogout}) => {
         return (
           <>
             <Link to='/login'>
-              <Button>Login</Button>
+              <Image 
+                src={AccountLogo}
+                alt='Elephant Store' 
+                width='30px'
+                className='me-3'
+              />
             </Link>
             <Link to='/register'>
-              <Button>SignUp</Button>
+              <Image 
+                src={AccountRegLogo}
+                alt='Elephant Store' 
+                width='30px'
+                className='me-3'
+              />
             </Link>
           </>
         )
@@ -48,20 +86,31 @@ const MainNavbar = ({ user, handleLogout}) => {
   // have links regardless of login or not
   return (
     <>
-      <nav>
-        <ul>
-          <Link to='/'>
-            <li>Home</li>
-          </Link>
-          <Link to='/items'>
-            <Button>Toys</Button>
-          </Link>
-          <Link to='/categorys'>
-            <Button>Toy Categories</Button>
-          </Link>
-          { rightNavItems() }
-        </ul>
-      </nav>
+      <div>
+        <Row>
+          <Col sm={4}>
+            <Link to='/'>
+              <Image 
+                src={SmallLogo}
+                alt='Elephant Store' 
+              />
+            </Link>
+          </Col>
+          <Col>
+            <Link to='/categorys'>
+              <NavBtn>Toys</NavBtn>
+            </Link>
+          </Col>
+          <Col>
+            <Link to='/items'>
+              <NavBtn>Search All</NavBtn>
+            </Link>
+          </Col>
+          <Col className="align-items-center justify-content-end d-flex">
+            { rightNavItems() }
+          </Col>
+        </Row>
+      </div>
     </>
   )
 }

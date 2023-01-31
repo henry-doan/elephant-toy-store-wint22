@@ -1,18 +1,51 @@
-import { Link } from "react-router-dom";
-
+import { Row, Col, Image, Container } from "react-bootstrap";
+import NewsletterForm from "../newsletter/NewsletterForm";
+import Bitmap from '../images/Bitmap.png';
+import color from '../images/color.png';
+import Bitmap1 from '../images/Bitmap1.png';
 
 const HomeBody = () => (
   <>
-
-   <img src='https://images.unsplash.com/photo-1587654780291-39c9404d746b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2340&q=80' width='300px'/>
-
-   <img src='https://images.unsplash.com/photo-1556012018-50c5c0da73bf?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2340&q=80' width='300px'/>
-
-   <img src='https://images.unsplash.com/photo-1593085512500-5d55148d6f0d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1480&q=80' width='300px'/>
-   
-   <div>
-    <Link to='/'>Register</Link>
-   </div>
+    <Container>
+      <Row>
+        <Col sm={4}>
+          <Row>
+            <Image 
+              src={color}
+              alt='home' 
+              width='90%'
+              height='50%'
+            />
+          </Row>
+          <br />
+          <Row>
+            <Image 
+              src={Bitmap1}
+              alt='home' 
+              width='90%'
+              height='50%'
+            />
+          </Row>
+        </Col>
+        <Col xs={8}>
+          <Row>
+            <Image 
+              src={Bitmap}
+              alt='home' 
+              width='100%'
+              height='62%'
+            />
+          </Row>
+          <Row className="justify-content-md-center">
+            <Col xs lg="2"></Col>
+            <Col md="auto">
+              <NewsletterForm/>
+            </Col>
+            <Col xs lg="2"></Col>
+          </Row>
+        </Col>
+      </Row>
+    </Container>
   </>
 )
 
