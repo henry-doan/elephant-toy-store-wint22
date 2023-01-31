@@ -12,6 +12,15 @@ Item.delete_all
   @counter += 1
 end
 
+1.times do
+  user = User.create(
+    name: Faker::Games::SuperMario.character,
+    email: "testadmin@test.com",
+    password: 'adminpassword',
+    admin: true
+  )
+end
+
 30.times do
   brands = [ 'Disney', 'Lego', 'Barbie']
   categories = ['Learning', 'Sports','Art']
