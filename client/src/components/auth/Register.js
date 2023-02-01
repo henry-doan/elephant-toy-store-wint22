@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { AuthConsumer } from '../../providers/AuthProvider';
-import { Form, Button } from 'react-bootstrap';
+import { Form, Row, Col } from 'react-bootstrap';
+import { PurpleBtn, ParText1, ParText2 } from '../styles/NewsletterStyles';
 
 const Register = ({ handleRegister, setShowRegister, setShowLogin }) => {
   const [user, setUser] = useState({ email: '', password: '', passwordConfirmation: '' })
@@ -21,8 +22,9 @@ const Register = ({ handleRegister, setShowRegister, setShowLogin }) => {
   }
 
   return (
-    <>
-      <h1>Register</h1>
+    <div className='text-center'>
+      <h2>Sign Up</h2>
+      <br/>
       <Form onSubmit={handleSubmit}>
         <Form.Group className="mb-3">
           <Form.Control 
@@ -31,7 +33,8 @@ const Register = ({ handleRegister, setShowRegister, setShowLogin }) => {
             onChange={(e) => setUser({...user, email: e.target.value })}
             required
             type="email" 
-            placeholder="Enter email"
+            placeholder="Email"
+            className='text-center'
           />
         </Form.Group>
 
@@ -43,28 +46,35 @@ const Register = ({ handleRegister, setShowRegister, setShowLogin }) => {
             required
             type="password" 
             placeholder="Password" 
+            className='text-center'
           />
         </Form.Group>
 
         <Form.Group className="mb-3">
-          <Form.Label>Password Confirmation</Form.Label>
           <Form.Control 
             name='passwordConfirmation'
             value={user.passwordConfirmation}
             onChange={(e) => setUser({...user, passwordConfirmation: e.target.value })}
             required
             type="password" 
-            placeholder="Password" 
+            placeholder="Confirm Password" 
+            className='text-center'
           />
         </Form.Group>
-        <Button variant="primary" type="submit">
-          Submit
-        </Button>
-        <Button variant="primary" type="button" onClick={() => displayLogin()}>
-          Already have an account?
-        </Button>
+        <PurpleBtn type="submit">
+          Register
+        </PurpleBtn>
+        <br/>
+        <Row>
+          <Col xs={8} className='text-end'>
+            <ParText1>Already a member?</ParText1>
+          </Col>
+          <Col className='text-start'>
+            <ParText2 type="button" color='#8999CC' onClick={() => displayLogin()}> Sign In</ParText2>
+          </Col>
+        </Row>
       </Form>
-    </>
+    </div>
   )
 }
 

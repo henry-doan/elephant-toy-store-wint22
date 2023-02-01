@@ -303,6 +303,10 @@ const Team = () => (
         </Col>
       </Row>
     </Container>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
   </>
 )
 
