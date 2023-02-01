@@ -15,6 +15,7 @@ import ItemShow from './components/items/ItemsShow';
 import AdminProtectedRoute from './components/auth/AdminProtectedRoute';
 import NewsletterList from './components/newsletter/NewsletterList';
 import About from './components/shared/About';
+import Footer from './components/shared/Footer';
 
 
 const App = () => (
@@ -47,6 +48,7 @@ const App = () => (
         </Routes>
       </>
     </FetchUser>
+    <Footer/>
   </>
 )
 
