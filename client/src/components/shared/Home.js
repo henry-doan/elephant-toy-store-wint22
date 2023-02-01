@@ -48,9 +48,8 @@ const Home = () => (
         </Col>
         <Col>
           <h1>Headline text</h1>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam</p>
+          <p>          <p>Carry the day in style with this extra-large tote crafted in our chic B.B. Collection textured PVC. Featuring colorful faux leather trim, this tote offers a roomy interior plus just enough perfectly placed pockets to keep smaller items organized and easy to find.</p>
+</p>
         </Col>
       </Row>
     </Container>
