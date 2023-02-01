@@ -71,12 +71,12 @@ const MainNavbar = ({ user, handleLogout}) => {
           <>
             <Image 
               src={AccountLogo}
-              alt='Elephant Store' 
+              alt='Login' 
               width='30px'
               className='me-3'
               onClick={() => setShowLogin(true)}
             />
-            <Modal show={showLogin} onHide={() => setShowLogin(false)}>
+            <Modal show={showLogin} onHide={() => setShowLogin(false)} size='sm'>
               <Modal.Header closeButton></Modal.Header>
               <Modal.Body>
                 <Login />
@@ -84,12 +84,12 @@ const MainNavbar = ({ user, handleLogout}) => {
             </Modal>
             <Image 
               src={AccountRegLogo}
-              alt='Elephant Store' 
+              alt='Register' 
               width='30px'
               className='me-3'
               onClick={() => setShowRegister(true)}
             />
-            <Modal show={showRegister} onHide={() => setShowRegister(false)}>
+            <Modal show={showRegister} onHide={() => setShowRegister(false)} size='sm'>
               <Modal.Header closeButton></Modal.Header>
               <Modal.Body>
                 <Register setShowRegister={setShowRegister} setShowLogin={setShowLogin} />

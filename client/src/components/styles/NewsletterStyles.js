@@ -52,3 +52,16 @@ export const NavBtn = styled.button`
     color: #8999CC;
   }
 `
+
+export const ParText1 = styled.p`
+  font-size: 15px;
+`
+
+export const ParText2 = styled.p`
+  color: #8999CC;
+  font-size: 15px;
+  &:hover {
+    cursor: pointer;
+    text-decoration: underline;
+  }
+`
