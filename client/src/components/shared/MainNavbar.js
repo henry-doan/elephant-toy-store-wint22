@@ -88,7 +88,7 @@ const MainNavbar = ({ user, handleLogout}) => {
     <>
       <div>
         <Row>
-          <Col sm={4}>
+          <Col xs={3}>
             <Link to='/'>
               <Image 
                 src={SmallLogo}
@@ -99,6 +99,11 @@ const MainNavbar = ({ user, handleLogout}) => {
           <Col>
             <Link to='/categorys'>
               <NavBtn>Toys</NavBtn>
+            </Link>
+          </Col>
+          <Col>
+            <Link to='/about'>
+              <NavBtn>Meet the Team</NavBtn>
             </Link>
           </Col>
           <Col>
