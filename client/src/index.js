@@ -14,6 +14,10 @@ import WishlistProvider from './providers/WishlistProvider';
 import WishlistItemProvider from './providers/WishlistItemsProvider';
 import NewsletterProvider from './providers/NewsletterProvider';
 import OrderItemProvider from './providers/OrderItemProvider';
+import './components/styles/Poppins/Poppins-Regular.ttf';
+import './components/styles/Poppins/Poppins-ExtraBold.ttf';
+import './components/styles/Open_Sans/OpenSans.ttf';
+
 
 initMiddleware();
 
