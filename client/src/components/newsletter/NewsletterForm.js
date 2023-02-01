@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { NewsletterConsumer } from '../../providers/NewsletterProvider';
-import { Form, Button } from 'react-bootstrap';
+import { Form, Container } from 'react-bootstrap';
+import { PurpleBtn } from '../styles/NewsletterStyles';
 
 const NewsletterForm = ({ addNewsletter }) => {
   const [newsletter, setNewsletter] = useState({ subscriber_name: '', email: '' })
@@ -13,30 +14,33 @@ const NewsletterForm = ({ addNewsletter }) => {
 
   return(
     <>
-      <h3>Subscribe to our Newsletter</h3>
-      <Form onSubmit={handleSubmit}>
-        <Form.Group className="mb-3">
-          <Form.Label>Your Name</Form.Label>
-          <Form.Control 
-            name='subscriber_name'
-            value={newsletter.subscriber_name}
-            onChange={(e) => setNewsletter({ ...newsletter, subscriber_name: e.target.value})}
-            required
-          />
-        </Form.Group>
-        <Form.Group className="mb-3">
-          <Form.Label>Email</Form.Label>
-          <Form.Control 
-            name='email'
-            value={newsletter.email}
-            onChange={(e) => setNewsletter({ ...newsletter, email: e.target.value})}
-            required
-          />
-        </Form.Group>
-        <Button variant="primary" type="submit">
-          Sign Up
-        </Button>
-      </Form>
+      <Container>
+        <h1>Let the games begin</h1>
+        <h6>Sign Up for our Newsletter!</h6>
+        <Form onSubmit={handleSubmit}>
+          <Form.Group className="mb-2">
+            <Form.Label>Your Name</Form.Label>
+            <Form.Control 
+              name='subscriber_name'
+              value={newsletter.subscriber_name}
+              onChange={(e) => setNewsletter({ ...newsletter, subscriber_name: e.target.value})}
+              required
+            />
+          </Form.Group>
+          <Form.Group className="mb-3">
+            <Form.Label>Email</Form.Label>
+            <Form.Control 
+              name='email'
+              value={newsletter.email}
+              onChange={(e) => setNewsletter({ ...newsletter, email: e.target.value})}
+              required
+            />
+          </Form.Group>
+          <PurpleBtn type="submit">
+            Register
+          </PurpleBtn>
+        </Form>
+      </Container>
     </>
   )
 }
