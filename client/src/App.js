@@ -1,7 +1,5 @@
 import { Routes, Route } from 'react-router-dom';
 import Home from './components/shared/Home';
-import Login from './components/auth/Login';
-import Register from './components/auth/Register';
 import Nomatch from './components/shared/Nomatch';
 import MainNavbar from './components/shared/MainNavbar';
 import FetchUser from './components/auth/FetchUser';
@@ -27,8 +25,8 @@ const App = () => (
         <Routes>
           <Route path='/items' element={<Items/>} />
           <Route path='/' element={<Home />} />
-          <Route path='/login' element={<Login />} />
-          <Route path='/register' element={<Register />} />
+          {/* <Route path='/login' element={<Login />} />
+          <Route path='/register' element={<Register />} /> */}
           <Route path='/items' element={<Items />} />
           <Route path='/categorys' element={<Categorys />} />
           <Route path='/about' element={<About/>} />
