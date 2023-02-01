@@ -11,6 +11,7 @@ const NewsletterList = ({ newsletters, getAllNewsletters }) => {
 
   return (
     <Container>
+      <br/>
       <h2>Admin Dashboard</h2>
       <br />
       <h5>Newsletter Subscriber List</h5>
