@@ -3,6 +3,7 @@ import { Image, Container, Row, Col } from 'react-bootstrap';
 import GitHubIcon from '../images/GitHubIcon.png';
 import LinkedInIcon from '../images/LinkedInIcon.png';
 import BrandonProfile from '../images/BrandonProfile.jpeg';
+import Ashlynprofile from '../images/AshlynProfile.jpeg';
 
 const Team = () => (
   <>
@@ -85,7 +86,7 @@ const Team = () => (
             <FlipCardInner>
               <FlipCardFront>
                 <Image 
-                  src={BrandonProfile}
+                  src={Ashlynprofile}
                   alt='home' 
                   width='300px'
                   height='300px'
@@ -93,10 +94,10 @@ const Team = () => (
                 />
               </FlipCardFront>
               <FlipCardBack>
-                <h4>Brandon Ferguson</h4>
+                <h4>Ashlyn Knight </h4>
                 <h6>Jr. Developer</h6>
-                <p>Contributed: User Auth, Admin Routes, Front-End Styling, and </p>
-                <a href='https://github.com/Brandon-Ferguson' target='_blank' rel="noreferrer">
+                <p>Contributed: Reviews Item, NavBar, wishlist </p>
+                <a href='https://github.com/AshlynsherieKnight' target='_blank' rel="noreferrer">
                   <Image 
                     src={GitHubIcon}
                     alt='Github' 
@@ -104,7 +105,7 @@ const Team = () => (
                     className='me-3'
                   />
                 </a>
-                <a href='https://www.linkedin.com/in/brandon-ferguson-byu/' target='_blank' rel="noreferrer">
+                <a href='https://www.linkedin.com/in/ashlyn-knight-ab955b252/' target='_blank' rel="noreferrer">
                   <Image 
                     src={LinkedInIcon}
                     alt='LinkedIn' 
