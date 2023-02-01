@@ -31,7 +31,7 @@ const AuthProvider = ({ children }) => {
     axios.delete('/api/auth/sign_out')
       .then( res => {
         setUser(null)
-        navigate('/login')
+        navigate('/')
       })
       .catch( err => console.log(err) )
   }

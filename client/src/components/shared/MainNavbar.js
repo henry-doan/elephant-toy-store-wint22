@@ -1,6 +1,6 @@
 import { AuthConsumer } from "../../providers/AuthProvider";
 import { Link } from 'react-router-dom';
-import { Image, Row, Col } from 'react-bootstrap';
+import { Image, Row, Col, Modal } from 'react-bootstrap';
 import SmallLogo from '../images/SmallLogo.png';
 import CartLogo from '../images/CartLogo.png';
 import BagLogo from '../images/BagLogo.png';
@@ -9,9 +9,16 @@ import AccountRegLogo from '../images/AccountRegLogo.png';
 import LogoutIcon from '../images/LogoutIcon.png';
 import { NavBtn } from "../styles/NewsletterStyles";
 import AdminIcon from '../images/AdminIcon.png';
+import { useState } from "react";
+import Login from "../auth/Login";
+import Register from "../auth/Register";
+
 
 const MainNavbar = ({ user, handleLogout}) => {
   
+  const [showLogin, setShowLogin] = useState(false);
+  const [showRegister, setShowRegister] = useState(false); 
+
     const rightNavItems = () => {
       // links to show up when user is logged in
       if (user) {
@@ -62,22 +69,32 @@ const MainNavbar = ({ user, handleLogout}) => {
         // links to show up when NOT logged in
         return (
           <>
-            <Link to='/login'>
-              <Image 
-                src={AccountLogo}
-                alt='Elephant Store' 
-                width='30px'
-                className='me-3'
-              />
-            </Link>
-            <Link to='/register'>
-              <Image 
-                src={AccountRegLogo}
-                alt='Elephant Store' 
-                width='30px'
-                className='me-3'
-              />
-            </Link>
+            <Image 
+              src={AccountLogo}
+              alt='Elephant Store' 
+              width='30px'
+              className='me-3'
+              onClick={() => setShowLogin(true)}
+            />
+            <Modal show={showLogin} onHide={() => setShowLogin(false)}>
+              <Modal.Header closeButton></Modal.Header>
+              <Modal.Body>
+                <Login />
+              </Modal.Body>
+            </Modal>
+            <Image 
+              src={AccountRegLogo}
+              alt='Elephant Store' 
+              width='30px'
+              className='me-3'
+              onClick={() => setShowRegister(true)}
+            />
+            <Modal show={showRegister} onHide={() => setShowRegister(false)}>
+              <Modal.Header closeButton></Modal.Header>
+              <Modal.Body>
+                <Register setShowRegister={setShowRegister} setShowLogin={setShowLogin} />
+              </Modal.Body>
+            </Modal>
           </>
         )
       }

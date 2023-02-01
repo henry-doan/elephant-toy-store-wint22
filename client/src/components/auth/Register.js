@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { AuthConsumer } from '../../providers/AuthProvider';
 import { Form, Button } from 'react-bootstrap';
 
-const Register = ({ handleRegister }) => {
+const Register = ({ handleRegister, setShowRegister, setShowLogin }) => {
   const [user, setUser] = useState({ email: '', password: '', passwordConfirmation: '' })
 
   const handleSubmit = (e) => {
@@ -15,12 +15,16 @@ const Register = ({ handleRegister }) => {
     }
   }
 
+  const displayLogin = () => {
+    setShowRegister(false);
+    setShowLogin(true);
+  }
+
   return (
     <>
       <h1>Register</h1>
       <Form onSubmit={handleSubmit}>
         <Form.Group className="mb-3">
-          <Form.Label>Email address</Form.Label>
           <Form.Control 
             name='email'
             value={user.email}
@@ -32,7 +36,6 @@ const Register = ({ handleRegister }) => {
         </Form.Group>
 
         <Form.Group className="mb-3">
-          <Form.Label>Password</Form.Label>
           <Form.Control 
             name='password'
             value={user.password}
@@ -56,6 +59,9 @@ const Register = ({ handleRegister }) => {
         </Form.Group>
         <Button variant="primary" type="submit">
           Submit
+        </Button>
+        <Button variant="primary" type="button" onClick={() => displayLogin()}>
+          Already have an account?
         </Button>
       </Form>
     </>
