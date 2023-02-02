@@ -17,6 +17,8 @@ import OrderItemProvider from './providers/OrderItemProvider';
 import './components/styles/Poppins/Poppins-Regular.ttf';
 import './components/styles/Poppins/Poppins-ExtraBold.ttf';
 import './components/styles/Open_Sans/OpenSans.ttf';
+import './components/styles/Montserrat/Montserrat-SemiBold.ttf';
+import './components/styles/Montserrat/Montserrat-Regular.ttf';
 
 
 initMiddleware();

@@ -19,7 +19,7 @@ const Orders = ({ orders, getAllOrders, msgs, setMsgs  }) => {
       </Button>
       <Modal show={adding} onHide={() => setAdd(false)}>
         <Modal.Header closeButton>
-          <Modal.Title>Create Order</Modal.Title>
+          <Modal.Title className='main-MontserratBold-font'>Create Order</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <OrderForm 

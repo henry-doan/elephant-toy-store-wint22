@@ -10,7 +10,7 @@ const WishlistShow = ({ id, wish_item_quantity, wish_total, wishlist_name, delet
   return(
     <>
       <Card style={{ width: '15rem' }}>
-        <Card.Body>
+        <Card.Body className='main-Montserrat-font'>
           <Card.Text>Address: {wishlist_name}</Card.Text>
           <Card.Text>Wishlist Total: ${wish_total}</Card.Text>
           <Button variant="outline-dark" onClick={() => setShow(true)}>
@@ -24,7 +24,7 @@ const WishlistShow = ({ id, wish_item_quantity, wish_total, wishlist_name, delet
         </Modal.Header>
         <Modal.Body>
           <Row>
-            <Col>
+            <Col className='main-Montserrat-font'>
               <Container>
                 <h2>{wishlist_name}</h2>
                 <p>wish_total: {wish_total}</p>

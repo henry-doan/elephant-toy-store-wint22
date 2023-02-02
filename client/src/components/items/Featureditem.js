@@ -30,9 +30,9 @@ const Featureditem = () => {
         </Col>
         <Col xs={6}>
           <Row>
-            <h6>Featured Item!</h6>
-            <h3>{item_name}</h3>
-            <p>{description}</p>
+            <h6 className="main-bold-font">Featured Item!</h6>
+            <h3 className="main-bold-font">{item_name}</h3>
+            <p className="main-font">{description}</p>
           </Row>
           <Row className="justify-content-md-center">
             <Link to={`/items/${id}`} state={{ ...item }}>

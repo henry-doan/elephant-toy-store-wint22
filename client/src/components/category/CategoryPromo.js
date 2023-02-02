@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 
 const CategoryPromo = () => {
   return (
-    <Container>
+    <Container className='main-bold-font'>
       <Card className="text-white">
         <Card.Img src={Storm} alt="Storm Trooper" />
         <Card.ImgOverlay>

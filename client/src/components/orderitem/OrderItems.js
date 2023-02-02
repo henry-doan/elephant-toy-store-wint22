@@ -12,7 +12,7 @@ const OrderItems = ({ orderItems, getAllOrderItems, msgs, setMsgs, orderId }) =>
   }, [])
 
   return (
-    <Container>
+    <Container className="main-MontserratBold-font">
       <h1>My Order Stuff</h1>
       <OrderItemList 
         orderItems = {orderItems}

@@ -3,6 +3,7 @@ import { Image, Container, Row, Col } from 'react-bootstrap';
 import GitHubIcon from '../images/GitHubIcon.png';
 import LinkedInIcon from '../images/LinkedInIcon.png';
 import BrandonProfile from '../images/BrandonProfile.jpeg';
+import HannahProfile1 from '../images/HannahProfile1.jpg';
 import HenryPortrait from '../images/HenryPortrait.jpeg';
 import FacebookIcon from '../images/FacebookIcon.png';
 import Bitmap1 from '../images/Bitmap1.png';
@@ -24,7 +25,7 @@ const Team = () => (
                   className='rounded'
                 />
               </FlipCardFront>
-              <FlipCardBack>
+              <FlipCardBack className='main-Sans-font'>
                 <br/>
                 <h4>Brandon Ferguson</h4>
                 <h6>Jr. Developer</h6>
@@ -64,21 +65,21 @@ const Team = () => (
             <FlipCardInner>
               <FlipCardFront>
                 <Image 
-                  src={Bitmap1}
+                  src={HannahProfile1}
                   alt='home' 
                   width='300px'
                   height='300px'
                   className='rounded'
                 />
               </FlipCardFront>
-              <FlipCardBack>
+              <FlipCardBack className='main-Sans-font'>
                 <br/>
                 <h4>Hannah Holt</h4>
                 <h6>Jr. Developer</h6>
                 <br/>
-                <p>Contributed: xyz, xyz, xyz </p>
+                <p>Contributed: Front End, Styled Fonts, Footer, & Front-End Styling   </p>
                 <br/>
-                <a href='https://github.com/Brandon-Ferguson' target='_blank' rel="noreferrer">
+                <a href='https://github.com/hannahholt15' target='_blank' rel="noreferrer">
                   <Image 
                     src={GitHubIcon}
                     alt='Github' 
@@ -86,7 +87,7 @@ const Team = () => (
                     className='me-3'
                   />
                 </a>
-                <a href='https://www.linkedin.com/in/brandon-ferguson-byu/' target='_blank' rel="noreferrer">
+                <a href='https://www.linkedin.com/in/hannah-holt-/' target='_blank' rel="noreferrer">
                   <Image 
                     src={LinkedInIcon}
                     alt='LinkedIn' 
@@ -94,7 +95,7 @@ const Team = () => (
                     className='me-3'
                   />
                 </a>
-                <a href='https://www.facebook.com/brandon.ferguson.182' target='_blank' rel="noreferrer">
+                <a href='https://www.facebook.com/hannah.holt.735/' target='_blank' rel="noreferrer">
                   <Image 
                     src={FacebookIcon}
                     alt='Facebook' 
@@ -118,7 +119,7 @@ const Team = () => (
                   className='rounded'
                 />
               </FlipCardFront>
-              <FlipCardBack>
+              <FlipCardBack className='main-Sans-font'>
                 <br/>
                 <h4>Ashlyn Knight</h4>
                 <h6>Jr. Developer</h6>
@@ -172,7 +173,7 @@ const Team = () => (
                   className='rounded'
                 />
               </FlipCardFront>
-              <FlipCardBack>
+              <FlipCardBack className='main-Sans-font'>
                 <br/>
                 <h4>Daylan Merritt</h4>
                 <h6>Jr. Developer</h6>
@@ -219,7 +220,7 @@ const Team = () => (
                   className='rounded'
                 />
               </FlipCardFront>
-              <FlipCardBack>
+              <FlipCardBack className='main-Sans-font'>
                 <br/>
                 <h4>Luis Topete</h4>
                 <h6>Jr. Developer</h6>
@@ -266,7 +267,7 @@ const Team = () => (
                   className='rounded'
                 />
               </FlipCardFront>
-              <FlipCardBack>
+              <FlipCardBack className='main-Sans-font'>
                 <br/>
                 <h4>Henry Doan</h4>
                 <h6>Sr. Developer</h6>

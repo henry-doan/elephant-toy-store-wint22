@@ -7,7 +7,7 @@ const About= () =>(
   <br/>
 
   <div className="d-flex justify-content-center align-items-center">
-    <h3>Our Team</h3>
+    <h3 className='main-bold-font'>Our Team</h3>
   </div>
   <br/>
 

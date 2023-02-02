@@ -28,9 +28,9 @@ const OrderForm = ({ setAdd, addOrder, updateOrder }) => {
 
   return(
     <>
-      { id ? <h1>Update Order</h1> : null}
+      { id ? <h1 className='main-MontserratBold-font'>Update Order</h1> : null}
       <Form onSubmit={handleSubmit}>
-        <Form.Group className="mb-3">
+        <Form.Group className="mb-3, main-Montserrat-font">
           <Form.Label>Address</Form.Label>
           <Form.Control 
             name='address'
@@ -39,7 +39,7 @@ const OrderForm = ({ setAdd, addOrder, updateOrder }) => {
             required
           />
         </Form.Group>
-        <Form.Group className="mb-3">
+        <Form.Group className="mb-3, main-Montserrat-font">
           <Form.Label>Order quantity</Form.Label>
           <Form.Control 
             name='order_quantity'
@@ -49,7 +49,7 @@ const OrderForm = ({ setAdd, addOrder, updateOrder }) => {
             required
           />
         </Form.Group>
-        <Form.Group className="mb-3">
+        <Form.Group className="mb-3, main-Montserrat-font">
           <Form.Label>Order Cost</Form.Label>
           <Form.Control 
             name='order_cost'
@@ -59,7 +59,7 @@ const OrderForm = ({ setAdd, addOrder, updateOrder }) => {
             required
           />
         </Form.Group>
-        <Form.Group className="mb-3">
+        <Form.Group className="mb-3, main-Montserrat-font">
           <Form.Label>Order number</Form.Label>
           <Form.Control 
             name='order_number'
@@ -69,7 +69,7 @@ const OrderForm = ({ setAdd, addOrder, updateOrder }) => {
             required
           />
         </Form.Group>
-        <Form.Group className="mb-3" controlId="formBasicCheckbox">
+        <Form.Group className="mb-3, main-Montserrat-font" controlId="formBasicCheckbox">
           <Form.Label>Processed</Form.Label>
           <Form.Check 
             type="checkbox"

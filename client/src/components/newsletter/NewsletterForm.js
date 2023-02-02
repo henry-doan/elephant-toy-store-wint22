@@ -16,10 +16,10 @@ const NewsletterForm = ({ addNewsletter, setShowSubscribe }) => {
   return(
     <>
       <Container className='text-center'>
-        <h1>Subscribe</h1>
+        <h1 className='main-bold-font'>Subscribe</h1>
         <br/>
         <Form onSubmit={handleSubmit}>
-          <Form.Group className="mb-2">
+          <Form.Group className="mb-2, main-font">
             <Form.Control 
               name='subscriber_name'
               value={newsletter.subscriber_name}
@@ -29,7 +29,7 @@ const NewsletterForm = ({ addNewsletter, setShowSubscribe }) => {
               className='text-center'
             />
           </Form.Group>
-          <Form.Group className="mb-3">
+          <Form.Group className="mb-3, main-font">
             <Form.Control 
               name='email'
               value={newsletter.email}
@@ -39,7 +39,7 @@ const NewsletterForm = ({ addNewsletter, setShowSubscribe }) => {
               className='text-center'
             />
           </Form.Group>
-          <PurpleBtn type="submit">
+          <PurpleBtn type="submit" className='main-font'>
             Subscribe
           </PurpleBtn>
         </Form>

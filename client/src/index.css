@@ -11,6 +11,18 @@
 }
 
 @font-face {
+  font-family: "MontserratRegular";
+  src: local("MontserratRegular"),
+   url("./components/styles/Montserrat/Montserrat-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "MontserratBold";
+  src: local("MontserratBold"),
+   url("./components/styles/Montserrat/Montserrat-SemiBold.ttf") format("truetype");
+}
+
+@font-face {
   font-family: "OpenSans";
   src: local("OpenSans"),
    url("./components/styles/Open_Sans/OpenSans-Italic.ttf") format("truetype");
@@ -53,4 +65,16 @@ code {
 
 .modal-content {
   border-radius: 0 !important;
+}
+
+.main-Montserrat-font {
+  font-family: "MontserratRegular", -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  sans-serif;
+}
+
+.main-MontserratBold-font {
+  font-family: "MontserratBold", -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  sans-serif;
 }

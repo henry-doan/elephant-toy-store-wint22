@@ -13,9 +13,9 @@ const Login = ({ handleLogin }) => {
 
   return (
     <div className='text-center'>
-      <h1>Sign In</h1>
+      <h1 className='main-MontserratBold-font'>Sign In</h1>
       <Form onSubmit={handleSubmit}>
-        <Form.Group className="mb-3">
+        <Form.Group className="mb-3, main-Montserrat-font">
           <Form.Control 
             name='email'
             value={user.email}
@@ -27,7 +27,7 @@ const Login = ({ handleLogin }) => {
           />
         </Form.Group>
 
-        <Form.Group className="mb-3">
+        <Form.Group className="mb-3, main-Montserrat-font">
           <Form.Control 
             name='password'
             value={user.password}
@@ -39,7 +39,7 @@ const Login = ({ handleLogin }) => {
           />
         </Form.Group>
         <Button variant="primary" type="submit">
-          Submit
+          Sign In
         </Button>
       </Form>
     </div>
