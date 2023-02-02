@@ -39,6 +39,25 @@ export const MaxWidthDiv = styled.div`
   text-align: center;
   margin: auto;
 `
+export const LightMaxWidthDiv = styled.div`
+  max-width: 90%;
+  justify-content: start;
+  align-items: left;
+  text-align: left;
+  margin: auto;
+`
+
+export const LeftMaxWidthDiv = styled.div`
+  max-width: 90%;
+  justify-content: start;
+  align-items: left;
+  text-align: left;
+  margin: auto;
+`
+
+export const BigH1 = styled.h1`
+  font-size: 60px !important;
+`
 
 export const NavBtn = styled.button`
   border: 2px solid white;

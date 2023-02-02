@@ -1,5 +1,5 @@
-import { Button } from 'react-bootstrap';
 import { NewsletterConsumer } from '../../providers/NewsletterProvider';
+import { PurpleBtn } from '../styles/NewsletterStyles';
 
 const NewsletterShow = ({ id, subscriber_name, email, deleteNewsletter }) => {
 
@@ -8,11 +8,12 @@ const NewsletterShow = ({ id, subscriber_name, email, deleteNewsletter }) => {
       <td>{subscriber_name}</td>
       <td>{email}</td>
       <td>
-        <Button
+        <PurpleBtn
+          type='button'
           onClick={() => deleteNewsletter(id)}
         >
           Delete
-        </Button>
+        </PurpleBtn>
       </td>
       <br />
     </>
