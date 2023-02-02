@@ -264,7 +264,7 @@ const Team = () => (
                 <h4>Henry Doan</h4>
                 <h6>Sr. Developer</h6>
                 <br/>
-                <p>Contributed: xyz, xyz, xyz </p>
+                <p>Contributed: Team training and overview </p>
                 <br/>
                 <a href='https://github.com/henry-doan' target='_blank' rel="noreferrer">
                   <Image 
