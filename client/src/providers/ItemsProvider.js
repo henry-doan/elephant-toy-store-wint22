@@ -49,6 +49,7 @@ const ItemProvider = ({ children }) => {
   const deleteItem = (id) => {
     axios.delete(`/api/items/${id}`)
       .then( res => setItems( items.filter(c => c.id !== id)))
+      navigate('/items')
       .catch( err => {
         console.log(err)
         setMsgs({ msg: err.response.data.errors })

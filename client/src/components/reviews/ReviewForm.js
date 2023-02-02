@@ -1,16 +1,14 @@
 import { useState, useEffect } from 'react';
-import { ReviewConsumer } from '../../providers/ReviewsProvider';
 import { Form, Button } from 'react-bootstrap';
-import { useLocation, useParams } from 'react-router-dom';
+import { useParams, useLocation } from 'react-router-dom';
+import { ReviewConsumer } from '../../providers/ReviewProvider';
 
-const ReviewForm = ({ setAdd, addReview, updateReview }) => {
+const ReviewForm = ({ setAdd, addReview, updateReview, id, item_id, rating, comment, setShow }) => {
   const [review, setReview] = useState({ rating: '', comment: '', })
-  const location = useLocation()
-  const { id } = useParams()
-
+  const { itemId } = useParams()
+  
   useEffect( () => {
     if (id) {
-      const { rating, comment, } = location.state
       setReview({ rating, comment })
     }
   }, [])
@@ -18,9 +16,10 @@ const ReviewForm = ({ setAdd, addReview, updateReview }) => {
   const handleSubmit = (e) => {
     e.preventDefault()
     if (id) {
-      updateReview(id, review)
+      updateReview(itemId, review, id)
+      setShow(false)
     } else {
-      addReview(review)
+      addReview(review, itemId)
       setAdd(false)
     }
     setReview({ rating: '', comment: '',})
@@ -28,7 +27,7 @@ const ReviewForm = ({ setAdd, addReview, updateReview }) => {
 
   return(
     <>
-      { id ? <h1>Rating</h1> : null}
+      <h1>Review Form</h1>
       <Form onSubmit={handleSubmit}>
         <Form.Group className="mb-3">
           <Form.Label>Rating</Form.Label>
@@ -36,6 +35,8 @@ const ReviewForm = ({ setAdd, addReview, updateReview }) => {
             name='rating'
             value={review.rating}
             onChange={(e) => setReview({ ...review, rating: e.target.value})}
+            max='5'
+            min='0'
             required
           />
         </Form.Group>
@@ -45,7 +46,8 @@ const ReviewForm = ({ setAdd, addReview, updateReview }) => {
             name='comment'
             value={review.comment}
             onChange={(e) => setReview({ ...review, comment: e.target.value})}
-            type='text'
+            as='textarea'
+            row={3}
             required
           />
         </Form.Group>

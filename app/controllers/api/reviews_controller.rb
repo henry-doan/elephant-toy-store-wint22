@@ -1,8 +1,9 @@
 class Api::ReviewsController < ApplicationController
+  before_action :set_items
   before_action :set_reviews, only: [:show, :update, :destroy]
 
   def index
-    render json: current_user.reviews
+    render json: @item.reviews
   end
 
   def show
@@ -10,7 +11,8 @@ class Api::ReviewsController < ApplicationController
   end
 
   def create
-    @review = current_user.reviews.new(reviews_params)
+    @review = @item.reviews.new(reviews_params)
+    @review.user_id = current_user.id
     if @review.save
       render json: @review
     else
@@ -32,8 +34,12 @@ class Api::ReviewsController < ApplicationController
   end
 
   private
+    def set_items
+      @item = Item.find(params[:item_id])
+    end
+
     def set_reviews
-      @review = current_user.reviews.find(params[:id])
+      @review = @item.reviews.find(params[:id])
     end
 
     def reviews_params

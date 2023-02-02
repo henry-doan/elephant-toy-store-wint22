@@ -10,8 +10,9 @@ const ReviewProvider = ({ children }) => {
   const [msgs, setMsgs] = useState()
   const navigate = useNavigate()
 
-  const getAllReviews = () => {
-    axios.get('/api/reviews')
+
+  const getAllReviews = (itemId) => {
+    axios.get(`/api/items/${itemId}/reviews`)
       .then( res => setReviews(res.data))
       .catch( err => {
         console.log(err)
@@ -19,8 +20,8 @@ const ReviewProvider = ({ children }) => {
       })
   }
 
-  const addReview = (review) => {
-    axios.post('/api/reviews', { review })
+  const addReview = (review, itemId) => {
+    axios.post(`/api/items/${itemId}/reviews`, { review })
       .then( res => setReviews([...reviews, res.data]))
       .catch( err => {
         console.log(err)
@@ -28,8 +29,8 @@ const ReviewProvider = ({ children }) => {
       })
   }
 
-  const updateReview = (id, review) => {
-    axios.put(`/api/reviews/${id}`, { review })
+  const updateReview = (itemId, review, id) => {
+    axios.put(`/api/items/${itemId}/reviews/${id}`, { review })
       .then(res => {
         const newUpdatedReviews = reviews.map( c => {
           if (c.id === id) {
@@ -38,7 +39,7 @@ const ReviewProvider = ({ children }) => {
           return c
         })
         setReviews(newUpdatedReviews)
-        navigate('/reviews')
+        navigate(`/items/${itemId}/reviews`)
       })
       .catch( err => {
         console.log(err)
@@ -46,8 +47,8 @@ const ReviewProvider = ({ children }) => {
       })
   }
 
-  const deleteReview = (id) => {
-    axios.delete(`/api/reviews/${id}`)
+  const deleteReview = (id, itemId) => {
+    axios.delete(`/api/items/${itemId}/reviews/${id}`)
       .then( res => setReviews( reviews.filter(c => c.id !== id)))
       .catch( err => {
         console.log(err)

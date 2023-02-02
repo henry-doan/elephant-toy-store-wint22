@@ -34,6 +34,9 @@ const MainNavbar = ({ user, handleLogout}) => {
                     className='me-3'
                   />
                 </Link>
+                <Link to='/orders'>
+                  <Button>All Orders</Button>
+                </Link>
               </>
               : 
               <>

@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { Container, Modal, Button } from 'react-bootstrap';
 import { useParams } from "react-router-dom";
 
-const OrderItems = ({ orderItems, getAllOrderItems, msgs, setMsgs, orderId }) => {
+const OrderItems = ({ orderItems, getAllOrderItems, orderId }) => {
   const [adding, setAdd] = useState(false)
 
   useEffect( () => {

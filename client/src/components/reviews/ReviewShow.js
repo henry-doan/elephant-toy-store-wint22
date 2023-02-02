@@ -1,40 +1,84 @@
-import { useState } from 'react';
-import ReviewForm from './ReviewForm'; 
+import { useEffect, useState } from 'react';
+import { Button } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
+import { ReviewConsumer } from '../../providers/ReviewProvider';
+import axios from 'axios';
+import ReviewForm from '../reviews/ReviewForm';
+import Modal from 'react-bootstrap/Modal';
+import { AuthConsumer } from '../../providers/AuthProvider';
 
-const ReviewShow = ({ item, body, rating, updateReview, deleteReview }) => {
-  const [editing, setEdit] = useState(false)
+
+
+const ReviewShow = ({ id, comment, rating, item_id, user_id, userId, deleteReview, itemId, user }) => {
+  const [creatorUser, setUser] = useState({email: ''})
+  const [showing, setShow] = useState(false)
+
+
+  
+  useEffect(() => {
+  axios.get(`/api/users/${user_id}`)
+  .then ( res => setUser(res.data))
+  .catch ( err => console.log(err))
+  }, [])
+  
+  const starRating = (rating) => {
+    let starArray = []
+    for (let i = 0; i < rating; i++) {
+      starArray.push(<div class='flexContainer' style={{display: 'inline'}}>
+        <span>⭐</span>
+      </div>)
+    }
+    return starArray
+  }
+
+  const checkForUser = () => {
+    const currentUser = userId
+    if(user_id === currentUser || user.admin == true) {
+      return (
+        <>
+          <Modal show={showing} onHide={() => setShow(false)}>
+            <Modal.Header closeButton>
+              <Modal.Title>Edit Review</Modal.Title>
+            </Modal.Header>
+            <Modal.Body>
+              <ReviewForm 
+              id={id}
+              item_id={item_id}
+              comment={comment}
+              rating={rating}
+              setShow={setShow}
+              />
+            </Modal.Body>
+            </Modal>
+            <Button onClick={() => setShow(true)}>Edit</Button>
+          <Button onClick={() => deleteReview(id, itemId)}>
+            Delete
+          </Button>
+        </>
+      )
+    }
+  }
   
   return (
     <>
-      {
-        editing ?
-        <>
-          <ReviewForm 
-            name={item}
-            body={body}
-            rating={rating}
-            updateReview={updateReview}
-            setEdit={setEdit}
-          />
-          <button onClick={() => setEdit(false)}> 
-            Cancel
-          </button>
-        </>
-        :
-        <>
-          <h3>{item}</h3>
-          <p>{body}</p>
-          <p>{rating}</p>
-          <button onClick={() => setEdit(true)}>
-            Edit
-          </button>
-          <button onClick={() => deleteReview}>
-            Delete
-          </button>
-        </>
-      }    
+      <p>Created By: {creatorUser.email}</p>
+      {starRating(rating) }
+      <p>{comment}</p>
+      {checkForUser() }
     </>
   )
 }
 
-export default ReviewShow;
+const ConnectedReviewShow = (props) => (
+  <ReviewConsumer>
+    { value => <ReviewShow {...props} {...value } />}
+  </ReviewConsumer>
+)
+
+const ConnectedAuthReview = (props) => (
+  <AuthConsumer>
+    { value => <ConnectedReviewShow {...props} {...value } />}
+  </AuthConsumer>
+)
+
+export default ConnectedAuthReview;
