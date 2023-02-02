@@ -3,7 +3,7 @@ import axios from 'axios';
 import { Container, Row, Col, Image } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { PurpleBtn } from '../styles/NewsletterStyles';
-
+import Robot from '../images/Robot.jpg';
 const Featureditem = () => {
   const [item, setItem] = useState({ id: 1, item_name: '', description: '', quantity: '', category: '', discount: '', brand: '', image: '' })
 
@@ -21,7 +21,7 @@ const Featureditem = () => {
         <Col sm={6}>
           <Row>
             <Image 
-              src={image}
+              src={Robot}
               alt='home' 
               width='90%'
               height='50%'
@@ -31,8 +31,8 @@ const Featureditem = () => {
         <Col xs={6}>
           <Row>
             <h6 className="main-bold-font">Featured Item!</h6>
-            <h3 className="main-bold-font">{item_name}</h3>
-            <p className="main-font">{description}</p>
+            <h3 className="main-bold-font"> Wall-e</h3>
+            <p className="main-font"> The last robot left on earth, programmed to clean up the planet, one trash cube at a time.</p>
           </Row>
           <Row className="justify-content-md-center">
             <Link to={`/items/${id}`} state={{ ...item }}>
