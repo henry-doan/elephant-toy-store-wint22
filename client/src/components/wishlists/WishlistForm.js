@@ -2,6 +2,8 @@ import { useState, useEffect } from 'react';
 import { WishlistConsumer } from '../../providers/WishlistProvider';
 import { Form, Button } from 'react-bootstrap';
 import { useLocation, useParams } from 'react-router-dom';
+import { PurpleBtn } from '../styles/NewsletterStyles';
+
 
 const WishlistForm = ({ setAdd, addWishlist, updateWishlist }) => {
   const [wishlist, setWishlist] = useState({ wish_item_quantity: 0, wish_total: 0, wishlist_name: '' })
@@ -59,9 +61,9 @@ const WishlistForm = ({ setAdd, addWishlist, updateWishlist }) => {
             required
           />
         </Form.Group>
-        <Button variant="primary" type="submit">
+        <PurpleBtn className='main-MontserratBold-font' type="submit">
           Submit
-        </Button>
+        </PurpleBtn>
       </Form>
     </>
   )

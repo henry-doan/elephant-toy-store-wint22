@@ -40,7 +40,7 @@ const Login = ({ handleLogin }) => {
             className='text-center'
           />
         </Form.Group>
-        <PurpleBtn type="submit">
+        <PurpleBtn type="submit" className='main-MontserratBold-font'>
           Sign In
         </PurpleBtn>
       </Form>

@@ -4,6 +4,8 @@ import { useState, useEffect } from "react";
 import { Container, Modal, Button } from 'react-bootstrap';
 import WishlistForm from './WishlistForm';
 import { Link } from 'react-router-dom';
+import { PurpleBtn } from '../styles/NewsletterStyles';
+
 
 const Wishlists = ({ wishlists, getAllWishlists, msgs, setMsgs  }) => {
   const [adding, setAdd] = useState(false)
@@ -14,9 +16,9 @@ const Wishlists = ({ wishlists, getAllWishlists, msgs, setMsgs  }) => {
 
   return (
     <Container>
-      <Button variant="primary" onClick={() => setAdd(true)}>
+      <PurpleBtn className='main-MontserratBold-font' onClick={() => setAdd(true)}>
         +
-      </Button>
+      </PurpleBtn>
       <Modal show={adding} onHide={() => setAdd(false)}>
         <Modal.Header closeButton>
           <Modal.Title className="main-MontserratBold-font">Create Wishlist</Modal.Title>

@@ -3,6 +3,8 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { WishlistConsumer } from '../../providers/WishlistProvider';
 import WishlistItemList from '../wishlistitems/WishlistItemList';
+import { PurpleBtn } from '../styles/NewsletterStyles';
+
 
 const WishlistShow = ({ id, wish_item_quantity, wish_total, wishlist_name, deleteWishlist, updateWishlist }) => {
   const [showing, setShow] = useState(false)
@@ -38,13 +40,13 @@ const WishlistShow = ({ id, wish_item_quantity, wish_total, wishlist_name, delet
                     wishlist_name,
                   }}
                 >
-                  <Button>Edit</Button>
+                  <PurpleBtn type="submit" className='main-MontserratBold-font'>Edit</PurpleBtn>
                 </Link>
-                <Button
+                <PurpleBtn type="submit" className='main-MontserratBold-font'
                   onClick={() => deleteWishlist(id)}
                 >
                   Delete
-                </Button>
+                </PurpleBtn>
                 <WishlistItemList wishlistId={id} />
               </Container>
             </Col>
