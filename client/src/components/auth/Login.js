@@ -14,10 +14,10 @@ const Login = ({ handleLogin }) => {
 
   return (
     <div className='text-center'>
-      <h2>Sign In</h2>
+      <h1 className='main-MontserratBold-font'>Sign In</h1>
       <br/>
       <Form onSubmit={handleSubmit}>
-        <Form.Group className="mb-3">
+        <Form.Group className="mb-3, main-Montserrat-font">
           <Form.Control 
             name='email'
             value={user.email}
@@ -29,7 +29,7 @@ const Login = ({ handleLogin }) => {
           />
         </Form.Group>
 
-        <Form.Group className="mb-3">
+        <Form.Group className="mb-3, main-Montserrat-font">
           <Form.Control 
             name='password'
             value={user.password}

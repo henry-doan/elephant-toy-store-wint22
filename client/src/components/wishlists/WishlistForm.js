@@ -28,9 +28,9 @@ const WishlistForm = ({ setAdd, addWishlist, updateWishlist }) => {
 
   return(
     <>
-      { id ? <h1>Update Wishlist</h1> : null}
+      { id ? <h1 className='main-MontserratBold-font'>Update Wishlist</h1> : null}
       <Form onSubmit={handleSubmit}>
-        <Form.Group className="mb-3">
+        <Form.Group className="mb-3, main-Montserrat-font">
           <Form.Label>Wishlist Name</Form.Label>
           <Form.Control 
             name='wishlist_name'
@@ -39,7 +39,7 @@ const WishlistForm = ({ setAdd, addWishlist, updateWishlist }) => {
             required
           />
         </Form.Group>
-        <Form.Group className="mb-3">
+        <Form.Group className="mb-3, main-Montserrat-font">
           <Form.Label>Wishlist Quantity</Form.Label>
           <Form.Control 
             name='wish_item_quantity'
@@ -49,7 +49,7 @@ const WishlistForm = ({ setAdd, addWishlist, updateWishlist }) => {
             required
           />
         </Form.Group>
-        <Form.Group className="mb-3">
+        <Form.Group className="mb-3, main-Montserrat-font">
           <Form.Label>Wishlist Total</Form.Label>
           <Form.Control 
             name='wish_total'

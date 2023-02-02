@@ -41,7 +41,7 @@ const HomeBody = () => {
                 height='62%'
               />
             </Row>
-            <Row className="justify-content-md-center">
+            <Row className="justify-content-md-center, main-bold-font">
               <Col xs lg="2"></Col>
               <Col md="auto" className="text-center">
                 <br/>

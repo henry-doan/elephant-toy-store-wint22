@@ -19,7 +19,7 @@ const Wishlists = ({ wishlists, getAllWishlists, msgs, setMsgs  }) => {
       </Button>
       <Modal show={adding} onHide={() => setAdd(false)}>
         <Modal.Header closeButton>
-          <Modal.Title>Create Wishlist</Modal.Title>
+          <Modal.Title className="main-MontserratBold-font">Create Wishlist</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <WishlistForm 
@@ -27,7 +27,7 @@ const Wishlists = ({ wishlists, getAllWishlists, msgs, setMsgs  }) => {
           />
         </Modal.Body>
       </Modal>
-      <h1>My Wishlists</h1>
+      <h1 className="main-MontserratBold-font">My Wishlists</h1>
       <WishlistList 
         wishlists={wishlists}
       />

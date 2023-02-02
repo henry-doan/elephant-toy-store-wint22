@@ -104,7 +104,7 @@ const MainNavbar = ({ user, handleLogout}) => {
   return (
     <>
       <div>
-        <Row>
+        <Row className="main-bold-font">
           <Col xs={3}>
             <Link to='/'>
               <Image 

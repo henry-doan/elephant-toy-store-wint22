@@ -17,15 +17,12 @@ const HomeHeader = () => (
             width='20%'
           />
         </div>
-        <div className="d-flex justify-content-center align-items-center">
-          <h2> Elephant Toy Store </h2>
-        </div>
-        <MaxWidthDiv className="d-flex justify-content-center align-items-center">
+        <MaxWidthDiv className="d-flex justify-content-center align-items-center, main-MontserratBold-font">
           <h4> From Toys, Collectibles, and board games. Elephant Toy Store has it all. </h4>
         </MaxWidthDiv>
         <div className="d-flex justify-content-center align-items-center">
           <Link to='/categorys'>
-            <InversePurpleBtn type="submit">
+            <InversePurpleBtn type="submit" className="main-Montserrat-font">
               View All
             </InversePurpleBtn>
           </Link>

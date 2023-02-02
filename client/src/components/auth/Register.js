@@ -23,10 +23,10 @@ const Register = ({ handleRegister, setShowRegister, setShowLogin }) => {
 
   return (
     <div className='text-center'>
-      <h2>Sign Up</h2>
+      <h1 className='main-MontserratBold-font'>Sign Up</h1>
       <br/>
       <Form onSubmit={handleSubmit}>
-        <Form.Group className="mb-3">
+        <Form.Group className="mb-3, main-Montserrat-font">
           <Form.Control 
             name='email'
             value={user.email}
@@ -38,7 +38,7 @@ const Register = ({ handleRegister, setShowRegister, setShowLogin }) => {
           />
         </Form.Group>
 
-        <Form.Group className="mb-3">
+        <Form.Group className="mb-3, main-Montserrat-font">
           <Form.Control 
             name='password'
             value={user.password}
@@ -50,7 +50,7 @@ const Register = ({ handleRegister, setShowRegister, setShowLogin }) => {
           />
         </Form.Group>
 
-        <Form.Group className="mb-3">
+        <Form.Group className="mb-3, main-Montserrat-font">
           <Form.Control 
             name='passwordConfirmation'
             value={user.passwordConfirmation}
