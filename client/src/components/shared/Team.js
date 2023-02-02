@@ -205,11 +205,12 @@ const Team = () => (
             <FlipCardInner>
               <FlipCardFront>
                 <Image 
-                  src={Bitmap1}
+                  src='https://res.cloudinary.com/dn2hrtbyt/image/upload/v1675303350/Elephante/LuisMugShot_qacqhu.jpg'
                   alt='home' 
                   width='300px'
                   height='300px'
                   className='rounded'
+                  style={{objectFit: 'cover'}}
                 />
               </FlipCardFront>
               <FlipCardBack className='main-Sans-font'>
@@ -217,9 +218,9 @@ const Team = () => (
                 <h4>Luis Topete</h4>
                 <h6>Jr. Developer</h6>
                 <br/>
-                <p>Contributed: xyz, xyz, xyz </p>
+                <p>Contributed: Back and FrontEnd WishlistItems, backend User, Styling for Wishlist and wishlistitem.</p>
                 <br/>
-                <a href='https://github.com/Brandon-Ferguson' target='_blank' rel="noreferrer">
+                <a href='https://github.com/LuisTopete' target='_blank' rel="noreferrer">
                   <Image 
                     src={GitHubIcon}
                     alt='Github' 
@@ -232,14 +233,6 @@ const Team = () => (
                     src={LinkedInIcon}
                     alt='LinkedIn' 
                     width='32px'
-                    className='me-3'
-                  />
-                </a>
-                <a href='https://www.facebook.com/brandon.ferguson.182' target='_blank' rel="noreferrer">
-                  <Image 
-                    src={FacebookIcon}
-                    alt='Facebook' 
-                    width='30px'
                     className='me-3'
                   />
                 </a>

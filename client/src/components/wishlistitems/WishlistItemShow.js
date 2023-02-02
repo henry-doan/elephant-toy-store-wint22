@@ -19,17 +19,17 @@ const WishlistItemShow = ({ id, item_id, wishlistId, deleteWishlistItem }) => {
 
   return(
     <Scrollbar>
-    <ListGroup.Item>
+    <ListGroup.Item className='main-Sans-font'>
      <Image src={image} alt={item_name} width='100px'/>
      <br></br>
      {item_name} 
      <br></br>
-      <PurpleBtn onClick={() => deleteWishlistItem(wishlistId, id)}>
+      <PurpleBtn onClick={() => deleteWishlistItem(wishlistId, id)} className='main-bold-font'>
         Remove From Wishlist
       </PurpleBtn>
       <br></br>
       <Link to={`/items/${item_id}`} state={{ ...item }}>
-      <PurpleBtn>
+      <PurpleBtn className='main-bold-font'>
         View Toy
       </PurpleBtn>
       </Link>

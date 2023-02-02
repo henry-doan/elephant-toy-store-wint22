@@ -14,7 +14,7 @@ const Wishlists = ({ wishlists, getAllWishlists, msgs, setMsgs  }) => {
   }, [])
 
   return (
-   <GreyBackground>
+   <GreyBackground className='main-font'>
       <Modal show={adding} onHide={() => setAdd(false)}>
         <Modal.Header closeButton>
           <Modal.Title className="main-MontserratBold-font">Create Wishlist</Modal.Title>
@@ -25,9 +25,9 @@ const Wishlists = ({ wishlists, getAllWishlists, msgs, setMsgs  }) => {
             />
         </Modal.Body>
       </Modal>
-      <h1>My Wishlists</h1>
+      <h1 className="main-bold-font">My Wishlists</h1>
       <ButtonSpace>
-      <addButton onClick={() => setAdd(true)}>
+      <addButton onClick={() => setAdd(true)} className="main-bold-font" >
         Add Wishlist
       </addButton>
       </ButtonSpace>

@@ -13,8 +13,8 @@ const WishlistShow = ({ id, wish_item_quantity, wishlist_name, deleteWishlist, u
     <>
       <WishCard style={{ width: '15rem' }}>
         <Card.Body>
-          <Card.Text>Wishlist Name: {wishlist_name}</Card.Text>
-          <PurpleBtn variant="outline-dark" onClick={() => setShow(true)}>
+          <Card.Text className='main-font' >Wishlist Name: {wishlist_name}</Card.Text>
+          <PurpleBtn variant="outline-dark" onClick={() => setShow(true)} className='main-bold-font' >
             Show
           </PurpleBtn>
         </Card.Body>
@@ -25,10 +25,10 @@ const WishlistShow = ({ id, wish_item_quantity, wishlist_name, deleteWishlist, u
         </Modal.Header>
         <Modal.Body>
           <Row>
-            <Col className='main-Montserrat-font'>
+            <Col>
               <Container>
                 <h2>{wishlist_name}</h2>
-                <p>Wishlist Item quantity: {wish_item_quantity}</p>
+                <p className='main-Montserrat-font'>Wishlist Item quantity: {wish_item_quantity}</p>
                 <Link
                   to={`/${id}/updateWishlist`}
                   state={{
@@ -37,11 +37,11 @@ const WishlistShow = ({ id, wish_item_quantity, wishlist_name, deleteWishlist, u
                     wishlist_name,
                   }}
                   >
-                  <PurpleBtn>Edit</PurpleBtn>
+                  <PurpleBtn className="main-bold-font">Edit</PurpleBtn>
                 </Link>
                 <PurpleBtn
                   onClick={() => deleteWishlist(id)}
-                  >
+                  className="main-bold-font">
                   Delete
                 </PurpleBtn>
                 <DuckGroup>
