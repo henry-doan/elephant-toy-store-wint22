@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { WishlistConsumer } from '../../providers/WishlistProvider';
 import { Form, Button } from 'react-bootstrap';
 import { useLocation, useParams } from 'react-router-dom';
+import { PurpleBtn } from '../styles/NewsletterStyles';
 
 const WishlistForm = ({ setAdd, addWishlist, updateWishlist }) => {
   const [wishlist, setWishlist] = useState({ wish_item_quantity: 0, wish_total: 0, wishlist_name: '' })
@@ -10,8 +11,8 @@ const WishlistForm = ({ setAdd, addWishlist, updateWishlist }) => {
 
   useEffect( () => {
     if (id) {
-      const { wish_item_quantity, wish_total, wishlist_name,} = location.state
-      setWishlist({ wish_item_quantity, wish_total, wishlist_name})
+      const { wish_item_quantity, wishlist_name,} = location.state
+      setWishlist({ wish_item_quantity, wishlist_name})
     }
   }, [])
 
@@ -31,7 +32,7 @@ const WishlistForm = ({ setAdd, addWishlist, updateWishlist }) => {
       { id ? <h1 className='main-MontserratBold-font'>Update Wishlist</h1> : null}
       <Form onSubmit={handleSubmit}>
         <Form.Group className="mb-3, main-Montserrat-font">
-          <Form.Label>Wishlist Name</Form.Label>
+          <Form.Label className='main-Sans-font'>Wishlist Name</Form.Label>
           <Form.Control 
             name='wishlist_name'
             value={wishlist.wishlist_name}
@@ -40,7 +41,7 @@ const WishlistForm = ({ setAdd, addWishlist, updateWishlist }) => {
           />
         </Form.Group>
         <Form.Group className="mb-3, main-Montserrat-font">
-          <Form.Label>Wishlist Quantity</Form.Label>
+          <Form.Label className='main-Sans-font' >Wishlist Quantity</Form.Label>
           <Form.Control 
             name='wish_item_quantity'
             value={wishlist.wish_item_quantity}
@@ -49,19 +50,9 @@ const WishlistForm = ({ setAdd, addWishlist, updateWishlist }) => {
             required
           />
         </Form.Group>
-        <Form.Group className="mb-3, main-Montserrat-font">
-          <Form.Label>Wishlist Total</Form.Label>
-          <Form.Control 
-            name='wish_total'
-            value={wishlist.wish_total}
-            onChange={(e) => setWishlist({ ...wishlist, wish_total: e.target.value})}
-            type='float'
-            required
-          />
-        </Form.Group>
-        <Button variant="primary" type="submit">
+        <PurpleBtn variant="primary" type="submit" className="main-bold-font">
           Submit
-        </Button>
+        </PurpleBtn>
       </Form>
     </>
   )

@@ -3,59 +3,59 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { WishlistConsumer } from '../../providers/WishlistProvider';
 import WishlistItemList from '../wishlistitems/WishlistItemList';
+import { PurpleBtn, } from '../styles/NewsletterStyles';
+import { WishCard,WishModal, DuckGroup } from '../styles/WishlistStyles';
 
-const WishlistShow = ({ id, wish_item_quantity, wish_total, wishlist_name, deleteWishlist, updateWishlist }) => {
+const WishlistShow = ({ id, wish_item_quantity, wishlist_name, deleteWishlist, updateWishlist }) => {
   const [showing, setShow] = useState(false)
 
   return(
     <>
-      <Card style={{ width: '15rem' }}>
-        <Card.Body className='main-Montserrat-font'>
-          <Card.Text>Address: {wishlist_name}</Card.Text>
-          <Card.Text>Wishlist Total: ${wish_total}</Card.Text>
-          <Button variant="outline-dark" onClick={() => setShow(true)}>
+      <WishCard style={{ width: '15rem' }}>
+        <Card.Body>
+          <Card.Text className='main-font' >Wishlist Name: {wishlist_name}</Card.Text>
+          <PurpleBtn variant="outline-dark" onClick={() => setShow(true)} className='main-bold-font' >
             Show
-          </Button>
+          </PurpleBtn>
         </Card.Body>
-      </Card>
+      </WishCard>
 
-      <Modal show={showing} onHide={() => setShow(false)}>
+      <WishModal show={showing} onHide={() => setShow(false)}>
         <Modal.Header closeButton>
         </Modal.Header>
         <Modal.Body>
           <Row>
-            <Col className='main-Montserrat-font'>
+            <Col>
               <Container>
                 <h2>{wishlist_name}</h2>
-                <p>wish_total: {wish_total}</p>
-                <p>Wishlist Item quantity: {wish_item_quantity}</p>
+                <p className='main-Montserrat-font'>Wishlist Item quantity: {wish_item_quantity}</p>
                 <Link
                   to={`/${id}/updateWishlist`}
                   state={{
                     id,
-                    wish_total,
                     wish_item_quantity,
                     wishlist_name,
                   }}
-                >
-                  <Button>Edit</Button>
+                  >
+                  <PurpleBtn className="main-bold-font">Edit</PurpleBtn>
                 </Link>
-                <Button
+                <PurpleBtn
                   onClick={() => deleteWishlist(id)}
-                >
+                  className="main-bold-font">
                   Delete
-                </Button>
-                <WishlistItemList wishlistId={id} />
+                </PurpleBtn>
+                <DuckGroup>
+                  <WishlistItemList wishlistId={id} />
+                </DuckGroup>
               </Container>
             </Col>
           </Row>
         </Modal.Body>
-      </Modal>
+      </WishModal>
       <br />
     </>
   )
 }
-
 
 const ConnectedWishlistShow = (props) => (
   <WishlistConsumer>
