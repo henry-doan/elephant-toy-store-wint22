@@ -5,7 +5,6 @@ import DropdownButton from 'react-bootstrap/DropdownButton';
 import { OrderItemConsumer } from "../../providers/OrderItemProvider";
 import { PurpleDropBtn } from "../styles/shared";
 
-
 const CartButton = ({id, addOrderItem}) => {
   const [orders, setOrders] = useState([])
   const [value, setValue] = useState(0)
@@ -33,9 +32,12 @@ const CartButton = ({id, addOrderItem}) => {
 
   return (
     <>
-        <DropdownButton title='cart' onSelect={handleSelect}>
-        {GetOrderNumbers()}
-        </DropdownButton>
+
+        <PurpleDropBtn id='bsPrefix'>
+          <DropdownButton title='cart' onSelect={handleSelect}>
+            {GetOrderNumbers()}
+          </DropdownButton>
+        </PurpleDropBtn>
     </>
   )
 }

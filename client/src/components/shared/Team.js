@@ -171,7 +171,7 @@ const Team = () => (
                 <h4>Daylan Merritt</h4>
                 <h6>Jr. Developer</h6>
                 <br/>
-                <p>Contributed: CRUD for Reviews, Orders, and Items. Models & Controllers, Admin Functionality, and Providers</p>
+                <p>Contributed: CRUD for Reviews, OrderItems, Orders, Items, and Wishlists. Models & Controllers, Admin Functionality, and Providers</p>
                 <br/>
                 <a href='https://github.com/DaylanM' target='_blank' rel="noreferrer">
                   <Image 

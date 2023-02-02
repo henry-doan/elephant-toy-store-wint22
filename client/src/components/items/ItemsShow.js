@@ -73,6 +73,7 @@ const ItemShow = ({ deleteItem, wishlists, getAllWishlists, addWishlistItem, use
                  width='200px'
                />
             <h1>{item_name}</h1>
+            <h3>{category}</h3>
             <Link
               to={`/items/${id}/reviews`}
             >

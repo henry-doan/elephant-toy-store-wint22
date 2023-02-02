@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 import link from 'react-router-dom'
 import DropdownButton from 'react-bootstrap/DropdownButton'
+import Dropdown from 'react-bootstrap/Dropdown';
+
 
 
 
@@ -89,4 +91,19 @@ export const FooterTitleSans = styled.h5`
 font-weight: 400 !important;
 font-size: 16px;
 color: #6C6C6C;
+`
+export const PurpleDropBtn = styled(Dropdown.Toggle)`
+  border: 2px solid #8999CC;
+  background-color: #8999CC;
+  border-radius: 24px;
+  width: 163px;
+  height: 48px;
+  color: white;
+  margin: 20px;
+  &:hover {
+    cursor: pointer;
+    background-color: white;
+    border: 2px solid #8999CC;
+    color: #8999CC;
+  }
 `
