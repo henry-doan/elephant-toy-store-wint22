@@ -50,7 +50,7 @@ const HomeBody = () => {
                 <PurpleBtn type="button" onClick={() => setShowSubscribe(true)}>
                   Subscribe
                 </PurpleBtn>
-                <Modal show={showSubscribe} onHide={() => setShowSubscribe(false)}>
+                <Modal show={showSubscribe} onHide={() => setShowSubscribe(false)} size='sm'>
                   <Modal.Header closeButton></Modal.Header>
                   <Modal.Body>
                     <NewsletterForm setShowSubscribe={setShowSubscribe}/>

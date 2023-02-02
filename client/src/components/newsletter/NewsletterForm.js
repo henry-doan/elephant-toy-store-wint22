@@ -16,7 +16,7 @@ const NewsletterForm = ({ addNewsletter, setShowSubscribe }) => {
   return(
     <>
       <Container className='text-center'>
-        <h1 className='main-bold-font'>Subscribe</h1>
+        <h1 className='main-bold-font'>Join our Newsletter</h1>
         <br/>
         <Form onSubmit={handleSubmit}>
           <Form.Group className="mb-2, main-font">

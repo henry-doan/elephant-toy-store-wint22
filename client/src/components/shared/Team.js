@@ -4,6 +4,7 @@ import GitHubIcon from '../images/GitHubIcon.png';
 import LinkedInIcon from '../images/LinkedInIcon.png';
 import BrandonProfile from '../images/BrandonProfile.jpeg';
 import HannahProfile1 from '../images/HannahProfile1.jpg';
+import Ashlynprofile from '../images/AshlynProfile.jpeg';
 import HenryPortrait from '../images/HenryPortrait.jpeg';
 import FacebookIcon from '../images/FacebookIcon.png';
 import Bitmap1 from '../images/Bitmap1.png';
@@ -112,7 +113,7 @@ const Team = () => (
             <FlipCardInner>
               <FlipCardFront>
                 <Image 
-                  src={Bitmap1}
+                  src={Ashlynprofile}
                   alt='home' 
                   width='300px'
                   height='300px'
@@ -123,30 +124,21 @@ const Team = () => (
                 <br/>
                 <h4>Ashlyn Knight</h4>
                 <h6>Jr. Developer</h6>
+                <p>Contributed: Reviews Item, NavBar, wishlist </p>
+                <a href='https://github.com/AshlynsherieKnight' target='_blank' rel="noreferrer">
                 <br/>
-                <p>Contributed: xyz, xyz, xyz </p>
-                <br/>
-                <a href='https://github.com/Brandon-Ferguson' target='_blank' rel="noreferrer">
-                  <Image 
+                <Image 
                     src={GitHubIcon}
                     alt='Github' 
                     width='30px'
                     className='me-3'
                   />
                 </a>
-                <a href='https://www.linkedin.com/in/brandon-ferguson-byu/' target='_blank' rel="noreferrer">
+                <a href='https://www.linkedin.com/in/ashlyn-knight-ab955b252/' target='_blank' rel="noreferrer">
                   <Image 
                     src={LinkedInIcon}
                     alt='LinkedIn' 
                     width='32px'
-                    className='me-3'
-                  />
-                </a>
-                <a href='https://www.facebook.com/brandon.ferguson.182' target='_blank' rel="noreferrer">
-                  <Image 
-                    src={FacebookIcon}
-                    alt='Facebook' 
-                    width='30px'
                     className='me-3'
                   />
                 </a>
@@ -304,6 +296,10 @@ const Team = () => (
         </Col>
       </Row>
     </Container>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
   </>
 )
 

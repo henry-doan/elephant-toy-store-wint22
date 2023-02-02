@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { AuthConsumer } from '../../providers/AuthProvider';
-import { Form, Button } from 'react-bootstrap';
+import { Form } from 'react-bootstrap';
+import { PurpleBtn } from '../styles/NewsletterStyles';
 
 const Login = ({ handleLogin }) => {
   const [user, setUser] = useState({ email: '', password: '' })
@@ -14,6 +15,7 @@ const Login = ({ handleLogin }) => {
   return (
     <div className='text-center'>
       <h1 className='main-MontserratBold-font'>Sign In</h1>
+      <br/>
       <Form onSubmit={handleSubmit}>
         <Form.Group className="mb-3, main-Montserrat-font">
           <Form.Control 
@@ -38,9 +40,9 @@ const Login = ({ handleLogin }) => {
             className='text-center'
           />
         </Form.Group>
-        <Button variant="primary" type="submit">
+        <PurpleBtn type="submit">
           Sign In
-        </Button>
+        </PurpleBtn>
       </Form>
     </div>
   )
