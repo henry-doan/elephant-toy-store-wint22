@@ -19,6 +19,7 @@ const OrderShow = ({ id, deleteOrderItem, orderId, item_id}) => {
   return(
     <>
       <ListGroup horizontal>
+        
         <ListGroup.Item><a href={`/items/${item_id}`}><Image src={image} width='100px'/></a></ListGroup.Item>
         <ListGroup.Item>{item_name}</ListGroup.Item>
         <ListGroup.Item onClick={() => deleteOrderItem(id, orderId)}>-</ListGroup.Item>

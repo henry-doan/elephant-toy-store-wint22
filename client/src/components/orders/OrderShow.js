@@ -21,9 +21,7 @@ const OrderShow = ({ id, order_quantity, order_cost, order_number, est_shipping,
       <p>processed:
         { processed ? " order is shipped" : " Not Shipped yet" }
       </p>
-      <p>order_cost: {order_cost}</p>
       <p>est_shipping: { processed ? <Moment format='MM-DD-YY'>{shipping}</Moment> : 'Not yet Shipped' }</p>
-      <p>order quantity: {order_quantity}</p>
       <Link
         to={`/${id}/updateOrder`}
         state={{

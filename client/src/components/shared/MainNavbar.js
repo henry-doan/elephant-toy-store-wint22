@@ -34,6 +34,9 @@ const MainNavbar = ({ user, handleLogout}) => {
                     className='me-3'
                   />
                 </Link>
+                <Link to='/orders'>
+                  <NavBtn>All Orders</NavBtn>
+                </Link>
               </>
               : 
               <>
@@ -55,14 +58,13 @@ const MainNavbar = ({ user, handleLogout}) => {
                 </Link>
               </>
             }
-            <Link onClick={() => handleLogout() }>
               <Image 
                 src={LogoutIcon}
                 alt='Elephant Store' 
                 width='30px'
                 className='me-3'
+                onClick={() => handleLogout()}
               />
-            </Link>
           </>
         )
       } else {

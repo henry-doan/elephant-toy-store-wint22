@@ -5,6 +5,7 @@ import { Container, Modal, Button } from 'react-bootstrap';
 import WishlistForm from './WishlistForm';
 import { Link } from 'react-router-dom';
 import { PurpleBtn } from '../styles/NewsletterStyles';
+import {GreyBackground, addButton, ButtonSpace} from '../styles/WishlistStyles';
 
 
 const Wishlists = ({ wishlists, getAllWishlists, msgs, setMsgs  }) => {
@@ -15,10 +16,7 @@ const Wishlists = ({ wishlists, getAllWishlists, msgs, setMsgs  }) => {
   }, [])
 
   return (
-    <Container>
-      <PurpleBtn className='main-MontserratBold-font' onClick={() => setAdd(true)}>
-        +
-      </PurpleBtn>
+   <GreyBackground className='main-font'>
       <Modal show={adding} onHide={() => setAdd(false)}>
         <Modal.Header closeButton>
           <Modal.Title className="main-MontserratBold-font">Create Wishlist</Modal.Title>
@@ -26,14 +24,19 @@ const Wishlists = ({ wishlists, getAllWishlists, msgs, setMsgs  }) => {
         <Modal.Body>
           <WishlistForm 
             setAdd={setAdd}
-          />
+            />
         </Modal.Body>
       </Modal>
-      <h1 className="main-MontserratBold-font">My Wishlists</h1>
+      <h1 className="main-bold-font">My Wishlists</h1>
+      <ButtonSpace>
+      <addButton onClick={() => setAdd(true)} className="main-bold-font" >
+        Add Wishlist
+      </addButton>
+      </ButtonSpace>
       <WishlistList 
         wishlists={wishlists}
-      />
-    </Container>
+        />
+   </GreyBackground> 
   )
 }
 

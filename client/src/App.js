@@ -16,6 +16,9 @@ import AdminProtectedRoute from './components/auth/AdminProtectedRoute';
 import NewsletterList from './components/newsletter/NewsletterList';
 import About from './components/shared/About';
 import Footer from './components/shared/Footer';
+import Reviews from './components/reviews/Reviews';
+import ReviewForm from './components/reviews/ReviewForm';
+import AllOrders from './components/orders/AllOrders';
 
 
 const App = () => (
@@ -38,10 +41,14 @@ const App = () => (
             <Route path='/:id/updateOrder' element={<OrderForm />} />
             <Route path='/wishlists' element={<Wishlists />} />
             <Route path='/:id/updateWishlist' element={<WishlistForm />} />
+            <Route path='/items/:itemId/reviews' element={<Reviews />} />
+            <Route path='/items/:itemId/reviewform' element={<ReviewForm />} />
+
           </Route>
 
           <Route path='/' element={<AdminProtectedRoute />} >
             <Route path='/newsletters' element={<NewsletterList />} />
+            <Route path='/orders' element={<AllOrders />} />
           </Route>
 
           <Route path='/*' element={<Nomatch />} />
