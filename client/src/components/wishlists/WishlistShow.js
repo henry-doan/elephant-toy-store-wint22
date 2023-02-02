@@ -39,9 +39,9 @@ const WishlistShow = ({ id, wish_item_quantity, wishlist_name, deleteWishlist, u
                 >
                   <PurpleBtn type="submit" className='main-MontserratBold-font'>Edit</PurpleBtn>
                 </Link>
-                <PurpleBtn type="submit" className='main-MontserratBold-font'
+                <PurpleBtn type="submit"
                   onClick={() => deleteWishlist(id)}
-                  className="main-bold-font">
+                  className='main-MontserratBold-font'>
                   Delete
                 </PurpleBtn>
                 <DuckGroup>
