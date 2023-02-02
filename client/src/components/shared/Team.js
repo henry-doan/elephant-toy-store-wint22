@@ -8,6 +8,7 @@ import Ashlynprofile from '../images/AshlynProfile.jpeg';
 import HenryPortrait from '../images/HenryPortrait.jpeg';
 import FacebookIcon from '../images/FacebookIcon.png';
 import Bitmap1 from '../images/Bitmap1.png';
+import DaylanPic from '../images/DaylanPic.jpg'
 
 const Team = () => (
   <>
@@ -158,7 +159,7 @@ const Team = () => (
             <FlipCardInner>
               <FlipCardFront>
                 <Image 
-                  src={Bitmap1}
+                  src={DaylanPic}
                   alt='home' 
                   width='300px'
                   height='300px'
@@ -170,9 +171,9 @@ const Team = () => (
                 <h4>Daylan Merritt</h4>
                 <h6>Jr. Developer</h6>
                 <br/>
-                <p>Contributed: xyz, xyz, xyz </p>
+                <p>Contributed: CRUD for Reviews, Orders, and Items. Models & Controllers, Admin Functionality, and Providers</p>
                 <br/>
-                <a href='https://github.com/Brandon-Ferguson' target='_blank' rel="noreferrer">
+                <a href='https://github.com/DaylanM' target='_blank' rel="noreferrer">
                   <Image 
                     src={GitHubIcon}
                     alt='Github' 
@@ -180,7 +181,7 @@ const Team = () => (
                     className='me-3'
                   />
                 </a>
-                <a href='https://www.linkedin.com/in/brandon-ferguson-byu/' target='_blank' rel="noreferrer">
+                <a href='https://www.linkedin.com/in/daylan-merritt-508722231/' target='_blank' rel="noreferrer">
                   <Image 
                     src={LinkedInIcon}
                     alt='LinkedIn' 
@@ -188,7 +189,7 @@ const Team = () => (
                     className='me-3'
                   />
                 </a>
-                <a href='https://www.facebook.com/brandon.ferguson.182' target='_blank' rel="noreferrer">
+                <a href='https://www.facebook.com/daylan.merritt/' target='_blank' rel="noreferrer">
                   <Image 
                     src={FacebookIcon}
                     alt='Facebook' 
