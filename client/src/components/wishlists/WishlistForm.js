@@ -5,7 +5,7 @@ import { useLocation, useParams } from 'react-router-dom';
 import { PurpleBtn } from '../styles/NewsletterStyles';
 
 const WishlistForm = ({ setAdd, addWishlist, updateWishlist }) => {
-  const [wishlist, setWishlist] = useState({ wish_item_quantity: 0, wish_total: 0, wishlist_name: '' })
+  const [wishlist, setWishlist] = useState({ wish_item_quantity: 0, wishlist_name: '' })
   const location = useLocation()
   const { id } = useParams()
 
@@ -24,7 +24,7 @@ const WishlistForm = ({ setAdd, addWishlist, updateWishlist }) => {
       addWishlist(wishlist)
       setAdd(false)
     }
-    setWishlist({ wish_item_quantity: 0, wish_total: 0, wishlist_name: ''})
+    setWishlist({ wish_item_quantity: 0, wishlist_name: ''})
   }
 
   return(
@@ -47,16 +47,6 @@ const WishlistForm = ({ setAdd, addWishlist, updateWishlist }) => {
             value={wishlist.wish_item_quantity}
             onChange={(e) => setWishlist({ ...wishlist, wish_item_quantity: e.target.value})}
             type='integer'
-            required
-          />
-        </Form.Group>
-        <Form.Group className="mb-3, main-Montserrat-font">
-          <Form.Label>Wishlist Total</Form.Label>
-          <Form.Control 
-            name='wish_total'
-            value={wishlist.wish_total}
-            onChange={(e) => setWishlist({ ...wishlist, wish_total: e.target.value})}
-            type='float'
             required
           />
         </Form.Group>
