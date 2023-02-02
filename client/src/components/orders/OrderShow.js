@@ -1,9 +1,10 @@
-import { Card, Button, Modal, Container, Row, Col } from 'react-bootstrap';
+import { Modal, Container } from 'react-bootstrap';
 import { useState } from 'react';
 import Moment from 'react-moment';
 import { Link } from 'react-router-dom';
 import { OrderConsumer } from '../../providers/OrderProvider';
 import OrderItems from '../orderitem/OrderItems';
+import { PurpleBtn } from '../styles/NewsletterStyles';
 
 const OrderShow = ({ id, order_quantity, order_cost, order_number, est_shipping, address, processed, deleteOrder, updateOrder }) => {
   const [showing, setShow] = useState(false)
@@ -34,13 +35,13 @@ const OrderShow = ({ id, order_quantity, order_cost, order_number, est_shipping,
           address,
         }}
       >
-        <Button>Edit</Button>
+        <PurpleBtn>Edit</PurpleBtn>
       </Link>
-      <Button
+      <PurpleBtn
         onClick={() => deleteOrder(id)}
       >
         Delete
-      </Button>
+      </PurpleBtn>
 
       <Modal show={showing} onHide={() => setShow(false)}
       dialogClassName="modal-90w"
@@ -59,7 +60,7 @@ const OrderShow = ({ id, order_quantity, order_cost, order_number, est_shipping,
           />
         </Modal.Body>
       </Modal>
-      <Button onClick={() => setShow(true)}> Order Items </Button>
+      <PurpleBtn onClick={() => setShow(true)}> Order Items </PurpleBtn>
       <br />
     </>
   )

@@ -3,8 +3,9 @@ import OrderList from './OrderList';
 import { useState, useEffect } from "react";
 import { Container, Modal, Button } from 'react-bootstrap';
 import OrderForm from './OrderForm';
+import { PurpleBtn } from "../styles/NewsletterStyles";
 
-const Orders = ({ orders, getAllOrders, msgs, setMsgs  }) => {
+const Orders = ({ orders, getAllOrders }) => {
   const [adding, setAdd] = useState(false)
 
   useEffect( () => {
@@ -13,9 +14,9 @@ const Orders = ({ orders, getAllOrders, msgs, setMsgs  }) => {
 
   return (
     <Container>
-      <Button variant="primary" onClick={() => setAdd(true)}>
-        +
-      </Button>
+      <PurpleBtn variant="primary" onClick={() => setAdd(true)}>
+        Add Order
+      </PurpleBtn>
       <Modal show={adding} onHide={() => setAdd(false)}>
         <Modal.Header closeButton>
           <Modal.Title className='main-MontserratBold-font'>Create Order</Modal.Title>

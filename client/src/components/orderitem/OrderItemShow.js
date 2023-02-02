@@ -3,7 +3,7 @@ import { OrderItemConsumer } from '../../providers/OrderItemProvider';
 import { useEffect, useState } from 'react';
 import { Image } from 'react-bootstrap';
 import axios from 'axios';
-
+import { PurpleBtn } from '../styles/NewsletterStyles';
 
 
 const OrderShow = ({ id, deleteOrderItem, orderId, item_id}) => {
@@ -22,7 +22,7 @@ const OrderShow = ({ id, deleteOrderItem, orderId, item_id}) => {
         
         <ListGroup.Item><a href={`/items/${item_id}`}><Image src={image} width='100px'/></a></ListGroup.Item>
         <ListGroup.Item>{item_name}</ListGroup.Item>
-        <ListGroup.Item onClick={() => deleteOrderItem(id, orderId)}>-</ListGroup.Item>
+        <ListGroup.Item onClick={() => deleteOrderItem(id, orderId)}><PurpleBtn>Remove Item</PurpleBtn></ListGroup.Item>
       </ListGroup>
     </>
   )

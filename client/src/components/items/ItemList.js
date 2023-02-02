@@ -12,6 +12,8 @@ const ItemList = ({ items }) => (
               <Card.Body>
                 <Card.Title>{c.item_name}</Card.Title>
               </Card.Body>
+                <p>Category: {c.category}</p>
+                <p>Brand: {c.brand}</p>
             </Card>
           </Link>
         </Col>

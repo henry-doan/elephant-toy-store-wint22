@@ -3,12 +3,13 @@ import { Link, useParams, useLocation } from 'react-router-dom';
 import { ItemConsumer } from '../../providers/ItemsProvider';
 import { WishlistConsumer } from '../../providers/WishlistProvider';
 import { WishlistItemConsumer } from '../../providers/WishlistItemsProvider';
-import { Card, Button, Modal, Container, Row, Col, Image } from 'react-bootstrap';
+import { Modal, Container, Row, Col, Image } from 'react-bootstrap';
 import { OrderItemConsumer } from '../../providers/OrderItemProvider';
 import { OrderConsumer } from '../../providers/OrderProvider';
 import CartButton from './CartButton';
 // import { ReviewConsumer } from '../../providers/ReviewProvider';
 import { AuthConsumer } from '../../providers/AuthProvider';
+import { PurpleBtn } from '../styles/NewsletterStyles';
 
 const ItemShow = ({ deleteItem, wishlists, getAllWishlists, addWishlistItem, user }) => {
   const [showing, setShow] = useState(false)
@@ -44,13 +45,13 @@ const ItemShow = ({ deleteItem, wishlists, getAllWishlists, addWishlistItem, use
                 brand
               }}
             >
-              <Button>Edit</Button>
+              <PurpleBtn>Edit</PurpleBtn>
             </Link>
-            <Button
+            <PurpleBtn
               onClick={() => deleteItem(id)}
             >
               Delete
-            </Button>
+            </PurpleBtn>
         </>
         :
         <>
@@ -72,15 +73,16 @@ const ItemShow = ({ deleteItem, wishlists, getAllWishlists, addWishlistItem, use
                  width='200px'
                />
             <h1>{item_name}</h1>
+            <h3>{category}</h3>
             <Link
               to={`/items/${id}/reviews`}
             >
-              <Button>Reviews</Button>
+              <PurpleBtn>Reviews</PurpleBtn>
             </Link>
             <CartButton id={id}/>
-            <Button variant="primary" onClick={() => setShow(true)}>
+            <PurpleBtn variant="primary" onClick={() => setShow(true)}>
               Add to Wishlists!
-            </Button>
+            </PurpleBtn>
             { AdminItems() }
 
             <Modal show={showing} onHide={() => setShow(false)}>
@@ -92,9 +94,9 @@ const ItemShow = ({ deleteItem, wishlists, getAllWishlists, addWishlistItem, use
                     wishlists.map(  wl => 
                       <p>
                         {wl.wishlist_name}
-                        <Button onClick={() => addtoWishlist(wl.id)}>
+                        <PurpleBtn onClick={() => addtoWishlist(wl.id)}>
                             +
-                        </Button>
+                        </PurpleBtn>
                       </p>
                       )
                   }

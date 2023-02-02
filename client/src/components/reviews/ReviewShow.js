@@ -1,12 +1,10 @@
 import { useEffect, useState } from 'react';
-import { Button } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
 import { ReviewConsumer } from '../../providers/ReviewProvider';
 import axios from 'axios';
 import ReviewForm from '../reviews/ReviewForm';
 import Modal from 'react-bootstrap/Modal';
 import { AuthConsumer } from '../../providers/AuthProvider';
-
+import { PurpleBtn } from '../styles/NewsletterStyles';
 
 
 const ReviewShow = ({ id, comment, rating, item_id, user_id, userId, deleteReview, itemId, user }) => {
@@ -50,10 +48,10 @@ const ReviewShow = ({ id, comment, rating, item_id, user_id, userId, deleteRevie
               />
             </Modal.Body>
             </Modal>
-            <Button onClick={() => setShow(true)}>Edit</Button>
-          <Button onClick={() => deleteReview(id, itemId)}>
+            <PurpleBtn onClick={() => setShow(true)}>Edit</PurpleBtn>
+          <PurpleBtn onClick={() => deleteReview(id, itemId)}>
             Delete
-          </Button>
+          </PurpleBtn>
         </>
       )
     }
