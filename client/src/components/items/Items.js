@@ -4,8 +4,9 @@ import { useState, useEffect } from "react";
 import { Container, Modal, Button } from 'react-bootstrap';
 import ItemForm from './ItemForm';
 import Filter from "./Filter";
+import { AuthConsumer } from "../../providers/AuthProvider";
 
-const Items = ({ items, getAllItems, msgs, setMsgs  }) => {
+const Items = ({ items, getAllItems, msgs, setMsgs, user  }) => {
   const [adding, setAdd] = useState(false)
   const [filter, setFilter] = useState("ALL")
 
@@ -34,10 +35,13 @@ const Items = ({ items, getAllItems, msgs, setMsgs  }) => {
 
   return (
     <Container>
-
-      <Button variant="primary" onClick={() => setAdd(true)}>
-        +
-      </Button>
+      { user.admin ? 
+        <Button variant="primary" onClick={() => setAdd(true)}>
+          +
+        </Button>
+        :
+        <></>
+      }
       <Filter 
       filter={filter}
       setFilter={setFilter}
@@ -67,4 +71,10 @@ const ConnectedItems = (props) => (
   </ItemConsumer>
 )
 
-export default ConnectedItems;
+const ConnectedAuthItemConsumer = (props) => (
+  <AuthConsumer>
+    { value => <ConnectedItems {...value} {...props} />}
+  </AuthConsumer>
+)
+
+export default ConnectedAuthItemConsumer;

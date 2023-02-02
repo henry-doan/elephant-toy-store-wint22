@@ -7,8 +7,10 @@ import { Card, Button, Modal, Container, Row, Col, Image } from 'react-bootstrap
 import { OrderItemConsumer } from '../../providers/OrderItemProvider';
 import { OrderConsumer } from '../../providers/OrderProvider';
 import CartButton from './CartButton';
+// import { ReviewConsumer } from '../../providers/ReviewProvider';
+import { AuthConsumer } from '../../providers/AuthProvider';
 
-const ItemShow = ({ deleteItem, wishlists, getAllWishlists, addWishlistItem }) => {
+const ItemShow = ({ deleteItem, wishlists, getAllWishlists, addWishlistItem, user }) => {
   const [showing, setShow] = useState(false)
   const { id } = useParams()
   const location = useLocation()
@@ -18,24 +20,19 @@ const ItemShow = ({ deleteItem, wishlists, getAllWishlists, addWishlistItem }) =
     getAllWishlists()
   },[])
 
+
   const addtoWishlist = (wishlistId) => {
     addWishlistItem(wishlistId, {item_id: id})
     setShow(false)
   }
 
-  return(
-    <>
-      <Row>
-        <Col>
-          <Container>
-          <Image 
-                 src={image} 
-                 alt={item_name}
-                 height='200px'
-                 width='200px'
-               />
-            <h1>{item_name}</h1>
-            <Link
+  const AdminItems = () => {
+    if (user)
+    return (
+      <>
+        {user.admin ?
+        <>
+          <Link
               to={`/${id}/updateItem`}
               state={{
                 id,
@@ -54,8 +51,29 @@ const ItemShow = ({ deleteItem, wishlists, getAllWishlists, addWishlistItem }) =
             >
               Delete
             </Button>
+        </>
+        :
+        <>
+        </>
+        }
+      </>
+    )
+  }
+
+  return(
+    <>
+      <Row>
+        <Col>
+          <Container>
+          <Image 
+                 src={image} 
+                 alt={item_name}
+                 height='200px'
+                 width='200px'
+               />
+            <h1>{item_name}</h1>
             <Link
-              to={`/${id}/review`}
+              to={`/items/${id}/reviews`}
             >
               <Button>Reviews</Button>
             </Link>
@@ -63,6 +81,7 @@ const ItemShow = ({ deleteItem, wishlists, getAllWishlists, addWishlistItem }) =
             <Button variant="primary" onClick={() => setShow(true)}>
               Add to Wishlists!
             </Button>
+            { AdminItems() }
 
             <Modal show={showing} onHide={() => setShow(false)}>
               <Modal.Header closeButton>
@@ -119,4 +138,12 @@ const ConectedOrderConsumer = (props) => (
   </OrderConsumer>
 )
 
-export default ConectedOrderConsumer;
+const ConnectedAuthConsumer = (props) => (
+  <AuthConsumer>
+    { value => <ConectedOrderConsumer {...props} {...value} />}
+  </AuthConsumer>
+)
+
+
+
+export default ConnectedAuthConsumer;

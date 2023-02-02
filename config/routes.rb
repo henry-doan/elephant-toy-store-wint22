@@ -2,8 +2,9 @@ Rails.application.routes.draw do
   mount_devise_token_auth_for 'User', at: 'api/auth'
 
   namespace :api do
-    resources :items
-    resources :reviews
+    resources :items do
+      resources :reviews
+    end
     resources :orders do
       resources :order_items
     end
@@ -15,5 +16,8 @@ Rails.application.routes.draw do
 
     get "/featured", to: "items#featured"
     resources :newsletters
+
+    resources :users, only: [:show]
+    get "/allOrders", to: "orders#allOrders"
   end
 end

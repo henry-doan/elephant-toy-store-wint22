@@ -1,13 +1,15 @@
 import { Container, Row, Col } from 'react-bootstrap';
 import ReviewShow from './ReviewShow';
 
-const ReviewList = ({ reviews }) => (
+const ReviewList = ({ reviews, itemId, userId }) => (
   <Container>
     <Row md='4'>
-      { items.map( c => 
-        <Col key={c.id}>
+      { reviews.map( r => 
+        <Col key={r.id}>
           <ReviewShow 
-            {...c}
+            {...r}
+            itemId = {itemId}
+            userId = {userId}
           />
         </Col>
       )}

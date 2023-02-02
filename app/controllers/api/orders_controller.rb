@@ -32,9 +32,13 @@ class Api::OrdersController < ApplicationController
   render json: { message: 'Order Deleted'}
   end
 
+  def allOrders
+    render json: Order.all
+  end
+
   private
     def set_orders
-      @order = current_user.orders.find(params[:id])
+      @order = Order.find(params[:id])
     end
 
   def orders_params
