@@ -1,7 +1,5 @@
 import { Routes, Route } from 'react-router-dom';
 import Home from './components/shared/Home';
-import Login from './components/auth/Login';
-import Register from './components/auth/Register';
 import Nomatch from './components/shared/Nomatch';
 import MainNavbar from './components/shared/MainNavbar';
 import FetchUser from './components/auth/FetchUser';
@@ -17,6 +15,7 @@ import ItemShow from './components/items/ItemsShow';
 import AdminProtectedRoute from './components/auth/AdminProtectedRoute';
 import NewsletterList from './components/newsletter/NewsletterList';
 import About from './components/shared/About';
+import Footer from './components/shared/Footer';
 
 
 const App = () => (
@@ -27,8 +26,8 @@ const App = () => (
         <Routes>
           <Route path='/items' element={<Items/>} />
           <Route path='/' element={<Home />} />
-          <Route path='/login' element={<Login />} />
-          <Route path='/register' element={<Register />} />
+          {/* <Route path='/login' element={<Login />} />
+          <Route path='/register' element={<Register />} /> */}
           <Route path='/items' element={<Items />} />
           <Route path='/categorys' element={<Categorys />} />
           <Route path='/about' element={<About/>} />
@@ -49,6 +48,7 @@ const App = () => (
         </Routes>
       </>
     </FetchUser>
+    <Footer/>
   </>
 )
 

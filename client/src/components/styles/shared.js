@@ -50,3 +50,41 @@ margin: auto;
 
 `
 
+export const FooterContainer = styled.footer` 
+height: 241px; 
+text-align: center;
+background: #2E2E2E;
+color: #FFFFFF;
+position: center;
+bottom: 0;
+width: 100%;
+
+`
+
+export const FooterTitles = styled.h3`
+font-weight: 900 !important;
+font-size: 24px;
+
+`
+
+export const FooterSocialBTN = styled.button`
+background: transparent; 
+border-radius: 50%;
+border: 1px solid #DADADA;
+padding: 5px;
+position: center;
+text-align: center;
+width: 30px;
+
+`
+
+export const FooterSocialCol = styled.div `
+margin: 0px 10px;
+`
+
+export const FooterTitleSans = styled.h5`
+font-weight: 400 !important;
+font-size: 16px;
+color: #6C6C6C;
+
+`

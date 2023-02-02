@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const FlipCard = styled.div`
   background-color: transparent;
   width: 300px;
-  height: 200px;
+  height: 300px;
   perspective: 1000px;
 `
 
