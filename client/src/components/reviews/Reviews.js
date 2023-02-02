@@ -6,6 +6,7 @@ import { Container, Modal, Button } from 'react-bootstrap';
 import { useParams } from 'react-router-dom';
 import {ItemConsumer} from '../../providers/ItemsProvider';
 import { AuthConsumer } from '../../providers/AuthProvider';
+import { PurpleBtn } from '../styles/NewsletterStyles';
 
 
 const Reviews = ({reviews, getAllReviews, user }) => {
@@ -18,10 +19,9 @@ const Reviews = ({reviews, getAllReviews, user }) => {
 
   return (
     <Container>
-      {/* <h1>{itemId ? "hello" : "no id" }</h1> */}
-      <Button variant="primary" onClick={() => setAdd(true)}>
-        +
-      </Button>
+      <PurpleBtn variant="primary" onClick={() => setAdd(true)}>
+        Add Review
+      </PurpleBtn>
       <Modal show={adding} onHide={() => setAdd(false)}>
         <Modal.Header closeButton>
           <Modal.Title>Create Review</Modal.Title>

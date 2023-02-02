@@ -3,6 +3,7 @@ import { OrderConsumer } from '../../providers/OrderProvider';
 import { Form, Button } from 'react-bootstrap';
 import { useLocation, useParams } from 'react-router-dom';
 import { AuthConsumer } from '../../providers/AuthProvider';
+import { PurpleBtn } from '../styles/NewsletterStyles';
 
 const OrderForm = ({ setAdd, addOrder, updateOrder, user }) => {
   const [order, setOrder] = useState({ order_quantity: 0, order_cost: 0, order_number: 0, est_shipping: '', address: '', processed: false, })
@@ -75,9 +76,9 @@ const OrderForm = ({ setAdd, addOrder, updateOrder, user }) => {
             />
           </Form.Group>
           {AdminOrderForm() }
-          <Button variant="primary" type="submit">
+          <PurpleBtn variant="primary" type="submit">
             Submit
-          </Button>
+          </PurpleBtn>
         </Form>
     </>
   )

@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { Form, Button } from 'react-bootstrap';
 import { useParams, useLocation } from 'react-router-dom';
 import { ReviewConsumer } from '../../providers/ReviewProvider';
+import { PurpleBtn } from '../styles/NewsletterStyles';
 
 const ReviewForm = ({ setAdd, addReview, updateReview, id, item_id, rating, comment, setShow }) => {
   const [review, setReview] = useState({ rating: '', comment: '', })
@@ -51,9 +52,9 @@ const ReviewForm = ({ setAdd, addReview, updateReview, id, item_id, rating, comm
             required
           />
         </Form.Group>
-        <Button variant="primary" type="submit">
+        <PurpleBtn variant="primary" type="submit">
           Submit
-        </Button>
+        </PurpleBtn>
       </Form>
     </>
   )

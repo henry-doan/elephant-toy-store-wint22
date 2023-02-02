@@ -3,6 +3,7 @@ import axios from "axios";
 import Dropdown from 'react-bootstrap/Dropdown';
 import DropdownButton from 'react-bootstrap/DropdownButton';
 import { OrderItemConsumer } from "../../providers/OrderItemProvider";
+import { PurpleDropBtn } from "../styles/shared";
 
 
 const CartButton = ({id, addOrderItem}) => {
@@ -32,10 +33,9 @@ const CartButton = ({id, addOrderItem}) => {
 
   return (
     <>
-      <DropdownButton title='cart' onSelect={handleSelect}>
-      {/* <Dropdown.Item href="#/action-1">Action</Dropdown.Item> */}
-      {GetOrderNumbers()}
-      </DropdownButton>
+        <DropdownButton title='cart' onSelect={handleSelect}>
+        {GetOrderNumbers()}
+        </DropdownButton>
     </>
   )
 }
