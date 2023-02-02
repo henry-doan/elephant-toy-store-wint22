@@ -227,7 +227,7 @@ const Team = () => (
                     className='me-3'
                   />
                 </a>
-                <a href='https://www.linkedin.com/in/brandon-ferguson-byu/' target='_blank' rel="noreferrer">
+                <a href='https://www.linkedin.com/in/luistopeterenteria/' target='_blank' rel="noreferrer">
                   <Image 
                     src={LinkedInIcon}
                     alt='LinkedIn' 

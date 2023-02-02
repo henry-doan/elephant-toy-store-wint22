@@ -3,6 +3,8 @@ import { useEffect, useState } from 'react';
 import { WishlistItemConsumer } from '../../providers/WishlistItemsProvider';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
+import { PurpleBtn } from '../styles/NewsletterStyles';
+import { Scrollbar } from '../styles/WishlistStyles';
 
 const WishlistItemShow = ({ id, item_id, wishlistId, deleteWishlistItem }) => {
   const [item, setItem] = useState({ item_name: '' , description: '' , quantity: "" , category: "" , discount: "" , brand: "" , image: "" })
@@ -16,18 +18,23 @@ const WishlistItemShow = ({ id, item_id, wishlistId, deleteWishlistItem }) => {
   const { item_name, image } = item
 
   return(
+    <Scrollbar>
     <ListGroup.Item>
      <Image src={image} alt={item_name} width='100px'/>
+     <br></br>
      {item_name} 
-      <Button onClick={() => deleteWishlistItem(wishlistId, id)}>
+     <br></br>
+      <PurpleBtn onClick={() => deleteWishlistItem(wishlistId, id)}>
         Remove From Wishlist
-      </Button>
+      </PurpleBtn>
+      <br></br>
       <Link to={`/items/${item_id}`} state={{ ...item }}>
-      <Button>
+      <PurpleBtn>
         View Toy
-      </Button>
+      </PurpleBtn>
       </Link>
     </ListGroup.Item>
+    </Scrollbar>
   )
 }
 

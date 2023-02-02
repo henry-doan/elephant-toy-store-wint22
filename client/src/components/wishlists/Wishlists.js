@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { Container, Modal, Button } from 'react-bootstrap';
 import WishlistForm from './WishlistForm';
 import { Link } from 'react-router-dom';
+import {GreyBackground, addButton, ButtonSpace} from '../styles/WishlistStyles';
 
 const Wishlists = ({ wishlists, getAllWishlists, msgs, setMsgs  }) => {
   const [adding, setAdd] = useState(false)
@@ -13,10 +14,7 @@ const Wishlists = ({ wishlists, getAllWishlists, msgs, setMsgs  }) => {
   }, [])
 
   return (
-    <Container>
-      <Button variant="primary" onClick={() => setAdd(true)}>
-        +
-      </Button>
+   <GreyBackground>
       <Modal show={adding} onHide={() => setAdd(false)}>
         <Modal.Header closeButton>
           <Modal.Title className="main-MontserratBold-font">Create Wishlist</Modal.Title>
@@ -24,14 +22,19 @@ const Wishlists = ({ wishlists, getAllWishlists, msgs, setMsgs  }) => {
         <Modal.Body>
           <WishlistForm 
             setAdd={setAdd}
-          />
+            />
         </Modal.Body>
       </Modal>
-      <h1 className="main-MontserratBold-font">My Wishlists</h1>
+      <h1>My Wishlists</h1>
+      <ButtonSpace>
+      <addButton onClick={() => setAdd(true)}>
+        Add Wishlist
+      </addButton>
+      </ButtonSpace>
       <WishlistList 
         wishlists={wishlists}
-      />
-    </Container>
+        />
+   </GreyBackground> 
   )
 }
 
