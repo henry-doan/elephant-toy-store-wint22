@@ -61,16 +61,16 @@ const Register = ({ handleRegister, setShowRegister, setShowLogin }) => {
             className='text-center'
           />
         </Form.Group>
-        <PurpleBtn type="submit">
+        <PurpleBtn type="submit" className='main-MontserratBold-font'>
           Register
         </PurpleBtn>
         <br/>
         <Row>
           <Col xs={8} className='text-end'>
-            <ParText1>Already a member?</ParText1>
+            <ParText1 className="mb-3, main-Montserrat-font">Already a member?</ParText1>
           </Col>
           <Col className='text-start'>
-            <ParText2 type="button" color='#8999CC' onClick={() => displayLogin()}> Sign In</ParText2>
+            <ParText2 type="button" color='#8999CC' className='main-MontserratBold-font' onClick={() => displayLogin()}> Sign In</ParText2>
           </Col>
         </Row>
       </Form>

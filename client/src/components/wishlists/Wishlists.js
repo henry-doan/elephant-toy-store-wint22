@@ -4,7 +4,9 @@ import { useState, useEffect } from "react";
 import { Container, Modal, Button } from 'react-bootstrap';
 import WishlistForm from './WishlistForm';
 import { Link } from 'react-router-dom';
+import { PurpleBtn } from '../styles/NewsletterStyles';
 import {GreyBackground, addButton, ButtonSpace} from '../styles/WishlistStyles';
+
 
 const Wishlists = ({ wishlists, getAllWishlists, msgs, setMsgs  }) => {
   const [adding, setAdd] = useState(false)

@@ -50,7 +50,17 @@ const WishlistForm = ({ setAdd, addWishlist, updateWishlist }) => {
             required
           />
         </Form.Group>
-        <PurpleBtn variant="primary" type="submit" className="main-bold-font">
+        <Form.Group className="mb-3, main-Montserrat-font">
+          <Form.Label>Wishlist Total</Form.Label>
+          <Form.Control 
+            name='wish_total'
+            value={wishlist.wish_total}
+            onChange={(e) => setWishlist({ ...wishlist, wish_total: e.target.value})}
+            type='float'
+            required
+          />
+        </Form.Group>
+        <PurpleBtn className='main-MontserratBold-font' type="submit">
           Submit
         </PurpleBtn>
       </Form>

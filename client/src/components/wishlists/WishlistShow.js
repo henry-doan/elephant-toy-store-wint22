@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { WishlistConsumer } from '../../providers/WishlistProvider';
 import WishlistItemList from '../wishlistitems/WishlistItemList';
-import { PurpleBtn, } from '../styles/NewsletterStyles';
+import { PurpleBtn } from '../styles/NewsletterStyles';
 import { WishCard,WishModal, DuckGroup } from '../styles/WishlistStyles';
 
 const WishlistShow = ({ id, wish_item_quantity, wishlist_name, deleteWishlist, updateWishlist }) => {
@@ -36,10 +36,10 @@ const WishlistShow = ({ id, wish_item_quantity, wishlist_name, deleteWishlist, u
                     wish_item_quantity,
                     wishlist_name,
                   }}
-                  >
-                  <PurpleBtn className="main-bold-font">Edit</PurpleBtn>
+                >
+                  <PurpleBtn type="submit" className='main-MontserratBold-font'>Edit</PurpleBtn>
                 </Link>
-                <PurpleBtn
+                <PurpleBtn type="submit" className='main-MontserratBold-font'
                   onClick={() => deleteWishlist(id)}
                   className="main-bold-font">
                   Delete
