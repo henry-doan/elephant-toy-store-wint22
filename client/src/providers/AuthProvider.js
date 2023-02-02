@@ -13,7 +13,7 @@ const AuthProvider = ({ children }) => {
     axios.post('/api/auth', user)
       .then(res => {
         setUser(res.data.data)
-        navigate('/cats')
+        navigate('/')
       })
       .catch( err => console.log(err) )
   }
